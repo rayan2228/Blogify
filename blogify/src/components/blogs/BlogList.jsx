@@ -3,15 +3,16 @@ import roadMap from "../../assets/blogs/React-Roadmap.jpg";
 import dots3 from "../../assets/icons/3dots.svg";
 import editIcon from "../../assets/icons/edit.svg";
 import deleteIcon from "../../assets/icons/delete.svg";
+import { Link } from "react-router-dom";
 const BlogList = () => {
   return (
     <div className="blog-card">
       <Img className="blog-thumb" src={roadMap} alt={roadMap} />
       <div className="relative mt-2">
-        <a href="./single-blog.html"></a>
+        <Link to="/single-blog"></Link>
         <h3 className="text-xl text-slate-300 lg:text-2xl">
-          <a href="./single-blog.html"></a>
-          <a href="./single-blog.html">React Roadmap in 2024</a>
+          <Link to="/single-blog"></Link>
+          <Link to="/single-blog">React Roadmap in 2024</Link>
         </h3>
         <p className="mt-1 mb-6 text-base text-slate-500">
           Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor
