@@ -46,13 +46,17 @@ const Header = () => {
             </li>
             <li className="flex items-center">
               {/* Circular Div with background color */}
-              <div className="text-white bg-orange-600 avater-img">
-                <span className="">S</span>
-                {/* User's first name initial */}
-              </div>
-              {/* Logged-in user's name */}
-              <span className="ml-2 text-white">Saad Hasan</span>
-              {/* Profile Image */}
+              <Link to={"/profile"}>
+                <div className="flex items-center">
+                  <div className="text-white bg-orange-600 avater-img">
+                    <span className="">S</span>
+                    {/* User's first name initial */}
+                  </div>
+                  {/* Logged-in user's name */}
+                  <span className="ml-2 text-white">Saad Hasan</span>
+                  {/* Profile Image */}
+                </div>
+              </Link>
             </li>
           </ul>
         </div>
