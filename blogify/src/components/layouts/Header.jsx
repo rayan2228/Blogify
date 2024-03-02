@@ -1,6 +1,6 @@
 import Img from "./Img";
 import logo from "../../assets/logo.svg";
-import search from "../../assets/share.svg";
+import search from "../../assets/icons/search.svg";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
@@ -8,9 +8,9 @@ const Header = () => {
       <nav className="container">
         {/* Logo */}
         <div>
-          <a href="./index.html">
+          <Link to="/">
             <Img className="w-32" src={logo} alt="lws" />
-          </a>
+          </Link>
         </div>
         {/* Actions - Login, Write, Home, Search */}
         {/* Notes for Developers */}
