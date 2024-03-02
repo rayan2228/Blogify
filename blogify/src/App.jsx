@@ -5,6 +5,7 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import { Routes, Route } from "react-router-dom";
 import SingleBlog from "./pages/SingleBlog";
+import BlogWrite from "./pages/BlogWrite";
 function App() {
   return (
     <Routes>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/single-blog" element={<SingleBlog />} />
+        <Route path="/blog-write" element={<BlogWrite />} />
       </Route>
     </Routes>
   );

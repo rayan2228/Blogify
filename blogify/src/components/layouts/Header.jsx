@@ -19,12 +19,12 @@ const Header = () => {
         <div>
           <ul className="flex items-center space-x-5">
             <li>
-              <a
-                href="./createBlog.html"
+              <Link
+                to="/blog-write"
                 className="px-6 py-2 text-white transition-all duration-200 bg-indigo-600 rounded-md md:py-3 hover:bg-indigo-700"
               >
                 Write
-              </a>
+              </Link>
             </li>
             <li>
               <a
