@@ -1,6 +1,7 @@
 import Img from "./Img";
 import logo from "../../assets/logo.svg";
 import search from "../../assets/share.svg";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
@@ -35,13 +36,13 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a
-                href="./login.html"
+              <Link
+                to="/login"
                 className="transition-all duration-200 text-white/50 hover:text-white"
               >
                 {" "}
                 Login{" "}
-              </a>
+              </Link>
             </li>
             <li className="flex items-center">
               {/* Circular Div with background color */}
