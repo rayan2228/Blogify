@@ -1,57 +1,98 @@
 import Container from "../components/layouts/Container";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import InputField from "../components/layouts/InputField";
+import { useForm } from "react-hook-form";
 const Register = () => {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const formSubmit = (formData) => {
+    console.log(formData);
+    navigate("/login");
+  };
   return (
     <main>
       <Container>
         <div className="w-full md:w-1/2 mx-auto bg-[#030317] p-8 rounded-md mt-12">
           <h2 className="mb-6 text-2xl font-bold">Register</h2>
-          <form action="" autoComplete="off">
-            <div className="mb-6">
-              <label htmlFor="firstName" className="block mb-2">
-                First Name
-              </label>
+          <form onSubmit={handleSubmit(formSubmit)} autoComplete="off">
+            <InputField
+              className={"mb-6"}
+              htmlFor="firstName"
+              labelClassName="block mb-2"
+              label={"First Name"}
+              error={errors.firstName}
+            >
               <input
+                {...register("firstName", {
+                  required: "first name is required",
+                })}
                 type="text"
                 id="firstName"
                 name="firstName"
-                className="w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500"
+                className={`w-full p-3 bg-[#030317] border ${
+                  !!errors.firstName ? "border-red-500" : "border-white/20"
+                } rounded-md focus:outline-none focus:border-indigo-500`}
               />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="lastName" className="block mb-2">
-                Last Name
-              </label>
+            </InputField>
+            <InputField
+              className={"mb-6"}
+              htmlFor="lastName"
+              labelClassName="block mb-2"
+              label={"Last Name"}
+              error={errors.lastName}
+            >
               <input
+                {...register("lastName", { required: "last name is required" })}
                 type="text"
                 id="lastName"
                 name="lastName"
-                className="w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500"
+                className={`w-full p-3 bg-[#030317] border ${
+                  !!errors.lastName ? "border-red-500" : "border-white/20"
+                } rounded-md focus:outline-none focus:border-indigo-500`}
               />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="email" className="block mb-2">
-                Email
-              </label>
+            </InputField>
+            <InputField
+              className={"mb-6"}
+              labelClassName="block mb-2"
+              label={"email"}
+              error={errors.email}
+            >
               <input
+                {...register("email", { required: "email required" })}
                 type="email"
                 id="email"
                 name="email"
-                className="w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500"
+                className={`w-full p-3 bg-[#030317] border ${
+                  !!errors.email ? "border-red-500" : "border-white/20"
+                } rounded-md focus:outline-none focus:border-indigo-500`}
               />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="password" className="block mb-2">
-                Password
-              </label>
+            </InputField>
+            <InputField
+              className={"mb-6"}
+              labelClassName="block mb-2"
+              label={"password"}
+              error={errors.password}
+            >
               <input
+                {...register("password", {
+                  required: "password is required",
+                  minLength: {
+                    value: 8,
+                    message: "your password must be at least 8 characters",
+                  },
+                })}
                 type="password"
                 id="password"
                 name="password"
-                className="w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500"
+                className={`w-full p-3 bg-[#030317] border ${
+                  !!errors.firstName ? "border-red-500" : "border-white/20"
+                } rounded-md focus:outline-none focus:border-indigo-500`}
               />
-            </div>
+            </InputField>
             <div className="mb-6">
               <button
                 type="submit"
