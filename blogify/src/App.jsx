@@ -14,11 +14,11 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/single-blog" element={<SingleBlog />} />
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/blog-write" element={<BlogWrite />} />
         </Route>
-        <Route path="/single-blog" element={<SingleBlog />} />
       </Route>
     </Routes>
   );
