@@ -255,6 +255,16 @@
       "bio": "",
       "password": "$2b$08$9V.loBxVFt97Zeox6bm6O.NxhdG0hUFCqRZDuP5fEZKLCbaEBIn9u",
       "favourites": []
+    },
+    {
+      "id": "ace91350a2a71c9ee8c6",
+      "email": "puqiqenoce@mailinator.com",
+      "firstName": "Ivan",
+      "lastName": "Stone",
+      "avatar": null,
+      "bio": "",
+      "password": "$2b$08$ZTu3sl0TEITt.Q2wWwx6UOvm8FcGL6Gwvl7Woj5RWimOjnYa5Qfi.",
+      "favourites": []
     }
   ],
   "blogs": [
