@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import { ProfileContext } from "../context";
+import {
+  initialState,
+  profileReducer,
+} from "../reducers/profile/profileReducer";
 
 const ProfileProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [state, dispatch] = useReducer(profileReducer, initialState);
   return (
-    <ProfileContext.Provider value={{ user, setUser }}>
+    <ProfileContext.Provider value={{ state, dispatch }}>
       {children}
     </ProfileContext.Provider>
   );

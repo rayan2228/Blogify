@@ -3,8 +3,10 @@ import logo from "../../assets/logo.svg";
 import search from "../../assets/icons/search.svg";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import useProfile from "../../hooks/useProfile";
 const Header = () => {
   const { auth } = useAuth();
+  const { state } = useProfile();
   return (
     <header>
       <nav className="container">
@@ -47,11 +49,17 @@ const Header = () => {
                 <Link to={"/profile"}>
                   <div className="flex items-center">
                     <div className="text-white bg-orange-600 avater-img">
-                      <span className="">S</span>
+                      <span className="">
+                        {auth?.user?.firstName?.charAt(0) ||
+                          state?.user?.firstName?.charAt(0)}
+                      </span>
                       {/* User's first name initial */}
                     </div>
                     {/* Logged-in user's name */}
-                    <span className="ml-2 text-white">Saad Hasan</span>
+                    <span className="ml-2 text-white">
+                      {auth?.user?.firstName || state?.user?.firstName}{" "}
+                      {auth?.user?.lastName || state?.user?.lastName}
+                    </span>
                     {/* Profile Image */}
                   </div>
                 </Link>

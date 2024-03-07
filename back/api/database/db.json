@@ -265,6 +265,16 @@
       "bio": "",
       "password": "$2b$08$ZTu3sl0TEITt.Q2wWwx6UOvm8FcGL6Gwvl7Woj5RWimOjnYa5Qfi.",
       "favourites": []
+    },
+    {
+      "id": "246fce5cd86695a374d5",
+      "email": "lytokohe@mailinator.com",
+      "firstName": "Hyacinth",
+      "lastName": "Marshall",
+      "avatar": null,
+      "bio": "",
+      "password": "$2b$08$/F6FGXlyxWSa0/H4LriNcuI71HaqRumOCoF4aKyyTngQeU85XdrBy",
+      "favourites": []
     }
   ],
   "blogs": [

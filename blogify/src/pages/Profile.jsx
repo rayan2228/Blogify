@@ -1,37 +1,41 @@
 import Container from "../components/layouts/Container";
-import BlogList from "../components/blogs/BlogList";
 import { useEffect } from "react";
 import api from "../api";
 import useAuth from "../hooks/useAuth";
 import ProfileInfo from "../components/profile/ProfileInfo";
-import useUser from "../hooks/useUser";
+import useProfile from "../hooks/useProfile";
+import actions from "../reducers/actions";
+import ProfileBlogs from "../components/profile/ProfileBlogs";
+import Loading from "../components/layouts/Loading";
 const Profile = () => {
   const { auth } = useAuth();
-  const { setUser } = useUser();
+  const { state, dispatch } = useProfile();
   const userId = auth?.user?.id;
   useEffect(() => {
+    dispatch({ type: actions.profile.dataFetching });
     const fetchProfileData = async () => {
       try {
         const res = await api.get(`/profile/${userId}`);
-        setUser(res?.data);
+        if (res.status === 200) {
+          dispatch({ type: actions.profile.dataFetched, data: res.data });
+        }
       } catch (error) {
-        console.log(error);
+        dispatch({
+          type: actions.profile.dataFetchedError,
+          data: error.message,
+        });
       }
     };
     fetchProfileData();
-  }, [userId, setUser]);
-
+  }, [userId, dispatch]);
+  if (state?.loading) {
+    return <Loading />;
+  }
   return (
     <main className="mx-auto max-w-[1020px] py-8">
       <Container>
-        {/* profile info */}
         <ProfileInfo />
-        {/* end profile info */}
-        <h4 className="mt-6 text-xl lg:mt-8 lg:text-2xl">Your Blogs</h4>
-        <div className="my-6 space-y-4">
-          {/* Blog Card Start */}
-          <BlogList />
-        </div>
+        <ProfileBlogs />
       </Container>
     </main>
   );
