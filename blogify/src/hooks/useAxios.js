@@ -25,7 +25,6 @@ const useAxios = () => {
                 if (error.response.status === 403 && !originalRequest._retry) {
                     originalRequest._retry = true;
                     const refreshToken = auth?.refreshToken
-                    console.log(refreshToken);
                     try {
                         const res = await axios.post(
                             `${import.meta.env.VITE_API_BASEURL}auth/refresh-token`,

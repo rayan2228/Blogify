@@ -42,6 +42,13 @@ const profileReducer = (state, action) => {
                 user: action.data,
             }
         }
+        case actions.profile.profileImageUpload: {
+            return {
+                ...state,
+                loading: false,
+                user: action.data,
+            }
+        }
         default: {
             return state
         }

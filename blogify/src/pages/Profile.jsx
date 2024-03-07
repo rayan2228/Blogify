@@ -28,7 +28,7 @@ const Profile = () => {
       }
     };
     fetchProfileData();
-  }, [userId, dispatch]);
+  }, [userId, dispatch, api]);
   if (state?.loading) {
     return <Loading />;
   }

@@ -281,9 +281,19 @@
       "email": "sofafoq@mailinator.com",
       "firstName": "Yoshi",
       "lastName": "Powell",
-      "avatar": null,
-      "bio": "yeah! I love this ..",
+      "avatar": "avatar-1709813207078-254417079.jpg",
+      "bio": "",
       "password": "$2b$08$HzeW5Ed.k0fgQKDKu5/n3OmPFHuIWebyS7uXifPRfAjLP3cNEwuf2",
+      "favourites": []
+    },
+    {
+      "id": "de48d3c8af895191faf4",
+      "email": "kyporywani@mailinator.com",
+      "firstName": "Autumn",
+      "lastName": "Wong",
+      "avatar": "avatar-1709814974060-416871654.jpg",
+      "bio": "hello",
+      "password": "$2b$08$YYhza9HvT.shUJhJLyzlPu3T1exjUhIBWVrLtI2DtnLsr0.6ePqce",
       "favourites": []
     }
   ],
