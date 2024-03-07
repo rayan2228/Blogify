@@ -12,7 +12,6 @@ const useAxios = () => {
                 const accessToken = auth?.accessToken
                 if (accessToken) {
                     config.headers.Authorization = `Bearer ${accessToken}`
-                    console.log("new1", accessToken);
                 }
                 return config
             },
@@ -23,23 +22,26 @@ const useAxios = () => {
             (response) => response,
             async (error) => {
                 const originalRequest = error.config
-                if (error.response.status === 401 && !originalRequest._retry) {
+                if (error.response.status === 403 && !originalRequest._retry) {
                     originalRequest._retry = true;
                     const refreshToken = auth?.refreshToken
-                    const res = await axios.post(
-                        `${import.meta.env.VITE_API_BASEURL}auth/refresh-token`,
-                        refreshToken
-                    );
-                    const { token } = res.data
-                    setAuth({ ...auth, accessToken: token })
-                    console.log("new", token);
-                    originalRequest.headers.Authorization = `Bearer ${token}`
-
-                    return axios(originalRequest)
+                    console.log(refreshToken);
+                    try {
+                        const res = await axios.post(
+                            `${import.meta.env.VITE_API_BASEURL}auth/refresh-token`,
+                            { refreshToken }
+                        );
+                        const { accessToken } = res.data
+                        setAuth({ ...auth, accessToken: accessToken })
+                        originalRequest.headers.Authorization = `Bearer ${accessToken}`
+                        return axios(originalRequest)
+                    } catch (error) {
+                        console.log(error);
+                    }
 
                 }
-                return Promise.reject(error)
-            }
+            },
+            (error) => Promise.reject(error)
         )
         return () => {
             api.interceptors.request.eject(requestInterceptor)

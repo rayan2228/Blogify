@@ -275,6 +275,16 @@
       "bio": "",
       "password": "$2b$08$/F6FGXlyxWSa0/H4LriNcuI71HaqRumOCoF4aKyyTngQeU85XdrBy",
       "favourites": []
+    },
+    {
+      "id": "dcb26bc440f49e128a20",
+      "email": "sofafoq@mailinator.com",
+      "firstName": "Yoshi",
+      "lastName": "Powell",
+      "avatar": null,
+      "bio": "yeah! I love this ..",
+      "password": "$2b$08$HzeW5Ed.k0fgQKDKu5/n3OmPFHuIWebyS7uXifPRfAjLP3cNEwuf2",
+      "favourites": []
     }
   ],
   "blogs": [

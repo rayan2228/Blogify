@@ -1,16 +1,17 @@
 import Container from "../components/layouts/Container";
 import { useEffect } from "react";
-import api from "../api";
 import useAuth from "../hooks/useAuth";
 import ProfileInfo from "../components/profile/ProfileInfo";
 import useProfile from "../hooks/useProfile";
 import actions from "../reducers/actions";
 import ProfileBlogs from "../components/profile/ProfileBlogs";
 import Loading from "../components/layouts/Loading";
+import useAxios from "../hooks/useAxios";
 const Profile = () => {
   const { auth } = useAuth();
   const { state, dispatch } = useProfile();
   const userId = auth?.user?.id;
+  const { api } = useAxios();
   useEffect(() => {
     dispatch({ type: actions.profile.dataFetching });
     const fetchProfileData = async () => {

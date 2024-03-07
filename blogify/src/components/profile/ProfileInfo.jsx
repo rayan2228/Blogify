@@ -1,8 +1,12 @@
 import Img from "../../components/layouts/Img";
 import editIcon from "../../assets/icons/edit.svg";
+
 import useProfile from "../../hooks/useProfile";
+
+import Bio from "./Bio";
 const ProfileInfo = () => {
   const { state } = useProfile();
+
   return (
     <div className="flex flex-col items-center py-8 text-center">
       {/* profile image */}
@@ -23,17 +27,7 @@ const ProfileInfo = () => {
         <p className="leading-[231%] lg:text-lg">{state?.user?.email}</p>
       </div>
       {/* bio */}
-      <div className="flex items-start gap-2 mt-4 lg:mt-6">
-        <div className="flex-1">
-          <p className="leading-[188%] text-gray-400 lg:text-lg">
-            {state?.user?.bio ? state?.user?.bio : "add your bio"}
-          </p>
-        </div>
-        {/* Edit Bio button. The Above bio will be editable when clicking on the button */}
-        <button className="rounded-full flex-center h-7 w-7">
-          <Img src={editIcon} alt="Edit" />
-        </button>
-      </div>
+      <Bio />
       <div className="w-3/4 border-b border-[#3F3F3F] py-6 lg:py-8" />
     </div>
   );

@@ -35,6 +35,13 @@ const profileReducer = (state, action) => {
                 error: action.error
             }
         }
+        case actions.profile.profileDataEdit: {
+            return {
+                ...state,
+                loading: false,
+                user: action.data,
+            }
+        }
         default: {
             return state
         }
