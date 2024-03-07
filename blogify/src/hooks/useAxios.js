@@ -12,6 +12,7 @@ const useAxios = () => {
                 const accessToken = auth?.accessToken
                 if (accessToken) {
                     config.headers.Authorization = `Bearer ${accessToken}`
+                    console.log("new1", accessToken);
                 }
                 return config
             },
