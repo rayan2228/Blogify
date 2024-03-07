@@ -2,7 +2,24 @@ import Container from "../components/layouts/Container";
 import Img from "../components/layouts/Img";
 import editIcon from "../assets/icons/edit.svg";
 import BlogList from "../components/blogs/BlogList";
+import { useEffect, useState } from "react";
+import api from "../api";
+import useAuth from "../hooks/useAuth";
 const Profile = () => {
+  const { auth, setAuth } = useAuth();
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const res = await api.get(`/profile/${auth?.user?.id}`);
+        setUser(res?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProfileData();
+  }, []);
+  console.log(user);
   return (
     <main className="mx-auto max-w-[1020px] py-8">
       <Container>
@@ -21,7 +38,7 @@ const Profile = () => {
           {/* name , email */}
           <div>
             <h3 className="text-2xl font-semibold text-white lg:text-[28px]">
-              Saad Hasan
+              {user?.firstName} {user?.lastName}
             </h3>
             <p className="leading-[231%] lg:text-lg">saadhasan@gmail.com</p>
           </div>

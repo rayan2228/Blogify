@@ -40,17 +40,7 @@ const Header = () => {
                 <span>Search</span>
               </a>
             </li>
-            {!auth.user && (
-              <li>
-                <Link
-                  to="/login"
-                  className="transition-all duration-200 text-white/50 hover:text-white"
-                >
-                  {" "}
-                  Login{" "}
-                </Link>
-              </li>
-            )}
+
             {auth.user && (
               <li className="flex items-center">
                 {/* Circular Div with background color */}
@@ -64,6 +54,26 @@ const Header = () => {
                     <span className="ml-2 text-white">Saad Hasan</span>
                     {/* Profile Image */}
                   </div>
+                </Link>
+              </li>
+            )}
+            {auth.user ? (
+              <li>
+                <Link
+                  to="/logout"
+                  className="px-6 py-2 text-white transition-all duration-200 bg-red-600 rounded-md md:py-3 hover:bg-red-700"
+                >
+                  Lgout
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Link
+                  to="/login"
+                  className="transition-all duration-200 text-white/50 hover:text-white"
+                >
+                  {" "}
+                  Login{" "}
                 </Link>
               </li>
             )}
