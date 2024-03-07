@@ -5,6 +5,11 @@ const actions = {
         dataFetchedError: "profileDataFetchedError",
         profileDataEdit: "profileDataEdit",
         profileImageUpload: "profileImageUpload"
+    },
+    blogs: {
+        dataFetching: "blogDataFetching",
+        dataFetched: "blogDataFetched",
+        dataFetchedError: "blogDataFetchedError",
     }
 }
 

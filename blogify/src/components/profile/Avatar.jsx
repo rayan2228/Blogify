@@ -25,7 +25,9 @@ const Avatar = () => {
     <div className="relative mb-8 max-h-[180px] max-w-[180px] h-[120px] w-[120px] rounded-full lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]">
       {state?.user?.avatar ? (
         <Img
-          src={`${import.meta.env.VITE_IMAGE_BASEURL}${state?.user?.avatar}`}
+          src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
+            state?.user?.avatar
+          }`}
           className={"rounded-full w-full h-full object-cover"}
         />
       ) : (

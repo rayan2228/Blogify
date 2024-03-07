@@ -4,30 +4,45 @@ import dots3 from "../../assets/icons/3dots.svg";
 import editIcon from "../../assets/icons/edit.svg";
 import deleteIcon from "../../assets/icons/delete.svg";
 import { Link } from "react-router-dom";
-const BlogList = () => {
+import useProfile from "../../hooks/useProfile";
+const BlogList = ({ blog }) => {
+  const { state } = useProfile();
   return (
     <div className="blog-card">
-      <Img className="blog-thumb" src={roadMap} alt={roadMap} />
+      <Img
+        className="blog-thumb"
+        src={`${import.meta.env.VITE_IMAGE_BASEURL}/blog/${blog.thumbnail}`}
+        alt={roadMap}
+      />
       <div className="relative mt-2">
         <Link to="/single-blog"></Link>
         <h3 className="text-xl text-slate-300 lg:text-2xl">
           <Link to="/single-blog"></Link>
-          <Link to="/single-blog">React Roadmap in 2024</Link>
+          <Link to="/single-blog">{blog.title}</Link>
         </h3>
-        <p className="mt-1 mb-6 text-base text-slate-500">
-          Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor
-          pretium donec dictum. Vici consequat justo enim. Venenatis eget
-          adipiscing luctus lorem.
-        </p>
-        {/* Meta Informations */}
+        <p className="mt-1 mb-6 text-base text-slate-500">{blog.content}</p>
+        {/* Meta Information */}
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 capitalize">
-            <div className="text-white bg-indigo-600 avater-img">
-              <span className="">S</span>
-            </div>
+            {blog.author?.avatar ? (
+              <Img
+                src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
+                  state?.id === blog.author?.id
+                    ? state?.user?.avatar
+                    : blog.author?.avatar
+                }`}
+                className={"rounded-full w-8 h-8 object-cover"}
+              />
+            ) : (
+              <div className="text-white bg-indigo-600 avater-img">
+                <span className="">S</span>
+              </div>
+            )}
             <div>
               <h5 className="text-sm text-slate-500">
-                <a href="./profile.html">Saad Hasan</a>
+                <a href="./profile.html">
+                  {blog.author?.firstName} {blog.author?.lastName}
+                </a>
               </h5>
               <div className="flex items-center text-xs text-slate-700">
                 <span>June 28, 2018</span>
@@ -35,7 +50,7 @@ const BlogList = () => {
             </div>
           </div>
           <div className="px-2 py-1 text-sm text-slate-700">
-            <span>100 Likes</span>
+            <span>{blog.likes.length} Likes</span>
           </div>
         </div>
         {/* action dot */}

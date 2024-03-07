@@ -15,8 +15,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/single-blog" element={<SingleBlog />} />
+        <Route path="/profile/:userId" element={<Profile />} />
         <Route element={<PrivateRoute />}>
-          <Route path="/profile" element={<Profile />} />
           <Route path="/blog-write" element={<BlogWrite />} />
         </Route>
       </Route>

@@ -4,7 +4,7 @@ const Loading = () => {
       <div className="flex items-center justify-center space-x-1 text-sm text-gray-700">
         <svg
           fill="none"
-          className="w-6 h-6 animate-spin"
+          className="w-10 h-10 animate-spin"
           viewBox="0 0 32 32"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -15,7 +15,7 @@ const Loading = () => {
             fillRule="evenodd"
           />
         </svg>
-        <div>Loading ...</div>
+        <div className="text-xl text-slate-300 lg:text-2xl">Loading ...</div>
       </div>
     </div>
   );

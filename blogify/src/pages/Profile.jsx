@@ -1,16 +1,15 @@
 import Container from "../components/layouts/Container";
 import { useEffect } from "react";
-import useAuth from "../hooks/useAuth";
 import ProfileInfo from "../components/profile/ProfileInfo";
 import useProfile from "../hooks/useProfile";
 import actions from "../reducers/actions";
 import ProfileBlogs from "../components/profile/ProfileBlogs";
 import Loading from "../components/layouts/Loading";
 import useAxios from "../hooks/useAxios";
+import { useParams } from "react-router-dom";
 const Profile = () => {
-  const { auth } = useAuth();
+  const { userId } = useParams();
   const { state, dispatch } = useProfile();
-  const userId = auth?.user?.id;
   const { api } = useAxios();
   useEffect(() => {
     dispatch({ type: actions.profile.dataFetching });
@@ -21,6 +20,7 @@ const Profile = () => {
           dispatch({ type: actions.profile.dataFetched, data: res.data });
         }
       } catch (error) {
+        console.log(error);
         dispatch({
           type: actions.profile.dataFetchedError,
           data: error.message,
@@ -30,6 +30,9 @@ const Profile = () => {
     fetchProfileData();
   }, [userId, dispatch, api]);
   if (state?.loading) {
+    return <Loading />;
+  }
+  if (state?.error) {
     return <Loading />;
   }
   return (

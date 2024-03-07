@@ -46,12 +46,12 @@ const Header = () => {
             {auth.user && (
               <li className="flex items-center">
                 {/* Circular Div with background color */}
-                <Link to={"/profile"}>
+                <Link to={`/profile/${auth?.user?.id}`}>
                   <div className="flex items-center">
                     {state?.user?.avatar || auth?.user?.avatar ? (
                       <Img
-                        src={`${import.meta.env.VITE_IMAGE_BASEURL}${
-                          state?.user?.avatar
+                        src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
+                          state?.user?.avatar ?? auth?.user?.avatar
                         }`}
                         className={"rounded-full w-8 h-8 object-cover"}
                       />

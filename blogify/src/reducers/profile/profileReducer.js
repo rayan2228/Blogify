@@ -2,7 +2,7 @@ import actions from "../actions"
 
 const initialState = {
     user: null,
-    blog: [],
+    blogs: [],
     favourites: [],
     loading: false,
     error: null,
@@ -21,7 +21,7 @@ const profileReducer = (state, action) => {
                 ...state,
                 loading: false,
                 user: action.data,
-                blog: action.data.blogs,
+                blogs: action.data.blogs,
                 favourites: action.data.favourites,
             }
         }
@@ -30,7 +30,7 @@ const profileReducer = (state, action) => {
                 ...state,
                 loading: false,
                 user: null,
-                blog: [],
+                blogs: [],
                 favourites: [],
                 error: action.error
             }
