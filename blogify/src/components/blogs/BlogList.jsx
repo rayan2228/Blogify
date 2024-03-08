@@ -20,7 +20,9 @@ const BlogList = ({ blog }) => {
           <Link to="/single-blog"></Link>
           <Link to="/single-blog">{blog.title}</Link>
         </h3>
-        <p className="mt-1 mb-6 text-base text-slate-500">{blog.content}</p>
+        <p className="mt-1 mb-6 text-base text-slate-500">
+          {`${blog.content.slice(0, 180)} ...`}
+        </p>
         {/* Meta Information */}
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 capitalize">
@@ -40,9 +42,9 @@ const BlogList = ({ blog }) => {
             )}
             <div>
               <h5 className="text-sm text-slate-500">
-                <a href="./profile.html">
+                <Link to={`/profile/${blog?.author?.id}`}>
                   {blog.author?.firstName} {blog.author?.lastName}
-                </a>
+                </Link>
               </h5>
               <div className="flex items-center text-xs text-slate-700">
                 <span>June 28, 2018</span>

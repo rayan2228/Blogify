@@ -5,7 +5,9 @@ import editIcon from "../../assets/icons/edit.svg";
 import useProfile from "../../hooks/useProfile";
 import actions from "../../reducers/actions";
 import useAxios from "../../hooks/useAxios";
+import useAuth from "../../hooks/useAuth";
 const Bio = () => {
+  const { auth } = useAuth();
   const { api } = useAxios();
   const { state, dispatch } = useProfile();
   const [showBioEdit, setShowBioEdit] = useState(false);
@@ -53,7 +55,9 @@ const Bio = () => {
             />
           ) : (
             <p className="leading-[188%] text-gray-400 lg:text-lg">
-              {state?.user?.bio ? state?.user?.bio : "add your bio"}
+              {state?.user?.bio
+                ? state?.user?.bio
+                : state?.user?.id === auth?.user?.id && "add your bio"}
             </p>
           )}
         </div>
@@ -66,12 +70,14 @@ const Bio = () => {
             <Img src={okIcon} alt="Ok" />
           </button>
         ) : (
-          <button
-            className="flex items-center justify-center rounded-full w-7 h-7 bg-slate-700 hover:bg-slate-700/80"
-            onClick={handleEditBio}
-          >
-            <Img src={editIcon} alt="Edit" />
-          </button>
+          state?.user?.id === auth?.user?.id && (
+            <button
+              className="flex items-center justify-center rounded-full w-7 h-7 bg-slate-700 hover:bg-slate-700/80"
+              onClick={handleEditBio}
+            >
+              <Img src={editIcon} alt="Edit" />
+            </button>
+          )
         )}
       </div>
     </>

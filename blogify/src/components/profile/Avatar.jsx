@@ -3,9 +3,11 @@ import editIcon from "../../assets/icons/edit.svg";
 import useProfile from "../../hooks/useProfile";
 import useAxios from "../../hooks/useAxios";
 import actions from "../../reducers/actions";
+import useAuth from "../../hooks/useAuth";
 const Avatar = () => {
   const { api } = useAxios();
   const { state, dispatch } = useProfile();
+  const { auth } = useAuth();
   const uploadImage = async (e) => {
     try {
       const formData = new FormData();
@@ -36,15 +38,23 @@ const Avatar = () => {
           <span className="">{state?.user?.firstName?.charAt(0)}</span>
         </div>
       )}
-      <form>
-        <label
-          className="absolute bottom-0 right-0 grid rounded-full place-items-center h-7 w-7 bg-slate-700 hover:bg-slate-700/80"
-          htmlFor="avatar"
-        >
-          <Img src={editIcon} alt="Edit" />
-        </label>
-        <input type="file" name="" id="avatar" hidden onChange={uploadImage} />
-      </form>
+      {state?.user?.id === auth?.user?.id && (
+        <form>
+          <label
+            className="absolute bottom-0 right-0 grid rounded-full place-items-center h-7 w-7 bg-slate-700 hover:bg-slate-700/80"
+            htmlFor="avatar"
+          >
+            <Img src={editIcon} alt="Edit" />
+          </label>
+          <input
+            type="file"
+            name=""
+            id="avatar"
+            hidden
+            onChange={uploadImage}
+          />
+        </form>
+      )}
     </div>
   );
 };
