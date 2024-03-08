@@ -10,6 +10,7 @@ const actions = {
         dataFetching: "blogDataFetching",
         dataFetched: "blogDataFetched",
         dataFetchedError: "blogDataFetchedError",
+        singleDataFetched: "singleDataFetched",
     }
 }
 
