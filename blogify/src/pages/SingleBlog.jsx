@@ -1,9 +1,7 @@
 import Container from "../components/layouts/Container";
 import Img from "../components/layouts/Img";
 import CommentsContainer from "../components/comments/CommentsContainer";
-import likeIcon from "../assets/icons/like.svg";
-import heartIcon from "../assets/icons/heart.svg";
-import commentIcon from "../assets/icons/comment.svg";
+
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useReducer } from "react";
 import api from "../api";
@@ -12,6 +10,7 @@ import actions from "../reducers/actions";
 import Loading from "../components/layouts/Loading";
 import NotFound from "../components/layouts/NotFound";
 import useProfile from "../hooks/useProfile";
+import SingleBlogActions from "../components/singleBlog/SingleBlogActions";
 const SingleBlog = () => {
   const { blogId } = useParams();
   const [state, dispatch] = useReducer(blogReducer, initialState);
@@ -104,25 +103,8 @@ const SingleBlog = () => {
           <CommentsContainer blogComments={state.blog.comments} />
         )}
         {/* End Blogs */}
+        <SingleBlogActions />
       </main>
-      <div className="floating-action">
-        <ul className="floating-action-menus">
-          <li>
-            <Img src={likeIcon} alt="like" />
-            <span>10</span>
-          </li>
-          <li>
-            {/* There is heart-filled.svg in the icons folder */}
-            <Img src={heartIcon} alt="Favourite" />
-          </li>
-          <a href="#comments">
-            <li>
-              <Img src={commentIcon} alt="Comments" />
-              <span>3</span>
-            </li>
-          </a>
-        </ul>
-      </div>
     </>
   );
 };
