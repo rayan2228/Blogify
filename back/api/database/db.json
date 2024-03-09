@@ -64,7 +64,13 @@
       "avatar": "avatar-1709965587521-50983329.png",
       "bio": "",
       "password": "$2b$08$yJzbpPexlnh85qEd6AijduJo8DEm/t9TsfryQ0g0t2e1CUH7.lvRq",
-      "favourites": []
+      "favourites": [
+        {
+          "id": "7c12b4b48531bcc995ae",
+          "title": "A guide to Prototype in JavaScript",
+          "tags": "programming, algorithm, prototype, javascript"
+        }
+      ]
     },
     {
       "id": "01eea48f23b03b502db4",

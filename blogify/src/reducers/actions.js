@@ -12,6 +12,7 @@ const actions = {
         dataFetchedError: "blogDataFetchedError",
         singleDataFetched: "singleDataFetched",
         popularDataFetched: "popularDataFetched",
+        favouriteDataFetched: "favouriteDataFetched"
     }
 }
 

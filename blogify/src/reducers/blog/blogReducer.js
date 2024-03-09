@@ -4,6 +4,7 @@ const initialState = {
     blogs: [],
     blog: null,
     popularBlogs: [],
+    favouriteBlogs: [],
     loading: false,
     error: null,
 }
@@ -43,6 +44,13 @@ const blogReducer = (state, action) => {
                 ...state,
                 loading: false,
                 popularBlogs: action.data,
+            }
+        }
+        case actions.blogs.favouriteDataFetched: {
+            return {
+                ...state,
+                loading: false,
+                favouriteBlogs: action.data,
             }
         }
         default: {
