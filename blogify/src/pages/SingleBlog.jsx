@@ -4,16 +4,18 @@ import CommentsContainer from "../components/comments/CommentsContainer";
 import likeIcon from "../assets/icons/like.svg";
 import heartIcon from "../assets/icons/heart.svg";
 import commentIcon from "../assets/icons/comment.svg";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useReducer } from "react";
 import api from "../api";
 import { blogReducer, initialState } from "../reducers/blog/blogReducer";
 import actions from "../reducers/actions";
 import Loading from "../components/layouts/Loading";
 import NotFound from "../components/layouts/NotFound";
+import useProfile from "../hooks/useProfile";
 const SingleBlog = () => {
   const { blogId } = useParams();
   const [state, dispatch] = useReducer(blogReducer, initialState);
+  const { state: profile } = useProfile();
   useEffect(() => {
     const fetchSingleBlog = async () => {
       dispatch({ type: actions.blogs.dataFetching });
@@ -35,10 +37,29 @@ const SingleBlog = () => {
         <h1 className="text-3xl font-bold md:text-5xl">{state?.blog?.title}</h1>
         <div className="flex items-center justify-center gap-4 my-4">
           <div className="flex items-center space-x-2 capitalize">
-            <div className="text-white bg-indigo-600 avater-img">
-              <span className="">S</span>
-            </div>
-            <h5 className="text-sm text-slate-500"></h5>
+            <Link to={`/profile/${state?.blog?.author?.id}`}>
+              {state?.blog.author?.avatar ? (
+                <Img
+                  src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
+                    profile?.user?.id === state?.blog.author?.id
+                      ? profile?.user?.avatar
+                      : state?.blog.author?.avatar
+                  }`}
+                  className={"rounded-full w-8 h-8 object-cover"}
+                />
+              ) : (
+                <div className="text-white bg-indigo-600 avater-img">
+                  <span className="">
+                    {state?.blog?.author?.firstName.charAt(0)}
+                  </span>
+                </div>
+              )}
+            </Link>
+            <h5 className="text-sm text-slate-500">
+              <Link to={`/profile/${state?.blog?.author?.id}`}>
+                {state?.blog.author?.firstName} {state?.blog.author?.lastName}
+              </Link>
+            </h5>
           </div>
           <span className="text-sm text-slate-700 dot">June 28, 2018</span>
           <span className="text-sm text-slate-700 dot">
@@ -79,7 +100,7 @@ const SingleBlog = () => {
         {/* Begin Blogs */}
         <Container>{content}</Container>
         {/* Begin Comments */}
-        {state?.blog && <CommentsContainer />}
+        {state?.blog && <CommentsContainer comments={state.blog.comments} />}
         {/* End Blogs */}
       </main>
       <div className="floating-action">

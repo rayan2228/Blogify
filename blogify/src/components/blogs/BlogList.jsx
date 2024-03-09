@@ -32,7 +32,7 @@ const BlogList = ({ blog }) => {
               {blog.author?.avatar ? (
                 <Img
                   src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
-                    state?.id === blog.author?.id
+                    state?.user?.id === blog.author?.id
                       ? state?.user?.avatar
                       : blog.author?.avatar
                   }`}
