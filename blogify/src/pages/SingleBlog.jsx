@@ -100,7 +100,9 @@ const SingleBlog = () => {
         {/* Begin Blogs */}
         <Container>{content}</Container>
         {/* Begin Comments */}
-        {state?.blog && <CommentsContainer comments={state.blog.comments} />}
+        {state?.blog && (
+          <CommentsContainer blogComments={state.blog.comments} />
+        )}
         {/* End Blogs */}
       </main>
       <div className="floating-action">

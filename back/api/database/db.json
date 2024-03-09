@@ -61,7 +61,7 @@
       "email": "laran@mailinator.com",
       "firstName": "Blaine",
       "lastName": "Bernard",
-      "avatar": "avatar-1709965587521-50983329.png",
+      "avatar": "avatar-1709981947636-393857396.png",
       "bio": "",
       "password": "$2b$08$yJzbpPexlnh85qEd6AijduJo8DEm/t9TsfryQ0g0t2e1CUH7.lvRq",
       "favourites": [
@@ -357,6 +357,66 @@
             "lastName": "Hasan",
             "avatar": "avatar-1708764856675-623317122.jpg"
           }
+        },
+        {
+          "id": "fe809ab30646ffd995c1",
+          "content": "asdsad",
+          "author": {
+            "id": "a8f6179c31f356356347",
+            "firstName": "Blaine",
+            "lastName": "Bernard",
+            "avatar": "avatar-1709965587521-50983329.png"
+          }
+        },
+        {
+          "id": "33e8bcd55e722d6a1a94",
+          "content": "asdsad",
+          "author": {
+            "id": "a8f6179c31f356356347",
+            "firstName": "Blaine",
+            "lastName": "Bernard",
+            "avatar": "avatar-1709965587521-50983329.png"
+          }
+        },
+        {
+          "id": "2c858b28e8a29ffafee1",
+          "content": "fsdf",
+          "author": {
+            "id": "a8f6179c31f356356347",
+            "firstName": "Blaine",
+            "lastName": "Bernard",
+            "avatar": "avatar-1709965587521-50983329.png"
+          }
+        },
+        {
+          "id": "faf1a93d57e888f4225e",
+          "content": "asdas",
+          "author": {
+            "id": "a8f6179c31f356356347",
+            "firstName": "Blaine",
+            "lastName": "Bernard",
+            "avatar": "avatar-1709965587521-50983329.png"
+          }
+        },
+        {
+          "id": "9e9d23db25654101abec",
+          "content": "asdas",
+          "author": {
+            "id": "a8f6179c31f356356347",
+            "firstName": "Blaine",
+            "lastName": "Bernard",
+            "avatar": "avatar-1709965587521-50983329.png"
+          }
+        },
+        {
+          "id": "b0bf5e9e719ac8b3022c",
+          "content": "asdas",
+          "author": {
+            "id": "a8f6179c31f356356347",
+            "firstName": "Blaine",
+            "lastName": "Bernard",
+            "avatar": "avatar-1709965587521-50983329.png"
+          }
         }
       ],
       "createdAt": "2024-02-24T09:09:01.121Z"
@@ -388,74 +448,30 @@
             "lastName": "Adhikary",
             "avatar": "avatar-1708764766479-243448656.png"
           }
+        },
+        {
+          "id": "b4d67cf6a4311d87047b",
+          "content": "zxzx",
+          "author": {
+            "id": "a8f6179c31f356356347",
+            "firstName": "Blaine",
+            "lastName": "Bernard",
+            "avatar": "avatar-1709965587521-50983329.png"
+          }
+        },
+        {
+          "id": "5cfb3d1096371e990097",
+          "content": "sd",
+          "author": {
+            "id": "a8f6179c31f356356347",
+            "firstName": "Blaine",
+            "lastName": "Bernard",
+            "avatar": "avatar-1709965587521-50983329.png"
+          }
         }
       ],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
-    },
-    {
-      "id": "6c33b31ecaa2b8917db2",
-      "title": "লিনিয়ার সার্চ । ডেটা স্ট্রাকচার ও এলগোরিদম",
-      "content": "গত ৫-৬ বছর থেকে Android, Fontend, Backend, Web Security ইত্যাদি নিয়ে কাজ করতে করতে একটা সময় মনে হলো, কোনো একটা জিনিস শেখা বাদ পরে গেছে। একটু কিছু চিন্তার পর বুঝতে পারলাম প্রোগ্রামিং এর সব থেকে important জিনিসটাই শেখা হয় নাই। আর তা হলো “ Data Structure & Algorithm ” । এটির গুরুত্ব নিয়ে বলার কিছু নাই।\n\nতাই Quarantine এর শেষের দিকে মাইন্ড সেটআপ করলাম,সব কিছু বাদ দিয়ে DS & Algo তেই ফোকাস করবো। তাই Android Studio কে লাল সালাম দিয়ে শেখা শুরু করলাম । এখন যখন আমি এই পোস্টটি লিখছি, তখনো আমি Data Structure & Algorithm এ খুব ভালো না, বলতে গেলে পারিই না। একদম বাচ্চা আমি। তবে এই পোস্ট টি মূলত আমি নিজের জন্যেই লিখছি, যেন ভবিষ্যতে যদি কখনো দরকার পরে বা কিছু ভূলে যাই তখবে নিজের লেখা জার্নাল দেখে আবার মনে করে নিতে পারি। (তবে এই পোষ্ট গুলো অবশ্যই পাবলিক থাকবে যেন অন্য কেউ যদি চায়, এগুলো follow করতে পারে )তাই এই পোষ্ট কিংবা এর পরবর্তীতে Data Structure & Algorithm নিয়ে পোষ্ট গুলো তে ভূল থাকা স্বাভাবিক। ভুলত্রুটি গুলো দেখিয়ে দেবার অনুরোধ রইলো।\n\nলিনিয়ার সার্চ এলগোরিদম\n\nএই অনেক অনেক সার্চিং এলগোরিদমের মধ্যে লিনিয়ার সার্চ সব থেকে সহজ একটি এলগোরিদম। ধরুন আপনি একটি বই এর তাক থেকে কোনো একটি নিদৃষ্ট বই খুজবেন অথবা তো আমি চাইলে এক এক করে খুজে বের করতে পারেন অথবা randomly ও খুজতে পারেন। লিনিয়ার সার্চের ক্ষেত্রে আমরা নিদির্ষ্ট বইটি এক এক করে খুজবো।\nঅর্থাৎ বই এর তাকের প্রথম থেকে খোজা শুরু করবো, প্রথম বইটি দেখবো। সেটা কি আমাদের কাংখিত বই ? যদি বইটি আমরা পেয়ে যাই তবে খোজা বাদ দিবো আর না পেলে খুজতেই থাকবো যতক্ষন পর্যন্ত আমরা আমাদের কাংখিত বই টি না পাচ্ছি ।\n\n\nআচ্ছা ধরুন, একটি Array আছে যার মধ্যে ৫,১২,১৮,২০,২৬ এই ৫টি Int ভ্যালু আছে। এখন আমাদের খুজতে হবে ২০ ভ্যালু টি array এর কোন পজিশন/index এ আছে।\n\nতবে ২০ এর ইনডেক্স খোজার জন্য আমরা নিচের ধাপ গুলো ফলো করতে পারি\n\nধাপ-১ঃ ধরি লিস্টে n সংখ্যক উপাদান আছে।\n\nধাপ-২ঃ এখন আমরা i এর মান ০ নেই এবং i এর মান (n-1) পর্যন্ত বাড়াতে থাকবো। প্রতিটি মানের জন্যে ধাপ-৩ এ যাই।\n\nধাপ-৩ঃ i এর মান array এর পজিশন/ইনডেক্স হিসেবে চিন্তা করি এবং array[i] এর ভ্যালু আমাদের কাংক্ষিত ভ্যালুর সাথে মিলে কিনা তা চেক করে দেখি। যদি মিলে যায় তবে ধাপঃ৪ এ যাই নাহলে আবার ধাপঃ২ এ যাই।\n\nধাপ-৪ঃ i এর ভ্যালু return করি এবং প্রোগ্রাম বন্ধ করি ।",
-      "thumbnail": "thumbnail-1708765461841-967006271.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "programming, algorithm",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-02-24T09:04:21.871Z"
-    },
-    {
-      "id": "9d5598ab44600a379103",
-      "title": "Dev Retro 2022: What made me a better developer this year?",
-      "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
-      "thumbnail": "thumbnail-1708793859418-241650391.png",
-      "author": {
-        "id": "346d7a36b3c41f3fbfa2",
-        "firstName": "Tapas",
-        "lastName": "Adhikary",
-        "avatar": "avatar-1708764766479-243448656.png"
-      },
-      "tags": "programming, algorithm, prototype, javascript",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-02-24T16:57:39.425Z"
-    },
-    {
-      "id": "965584a7b281d9f99c14",
-      "title": "What do you need to know to become proficient in JavaScript?",
-      "content": "JavaScript is everywhere! It's the web browser's language and helps you create web, mobile, and desktop applications. Today, JavaScript is not limited to the client side alone; it is equally popular as the base of server-side frameworks like Node.js and Deno. If you are considering picking up and mastering a programming language, JavaScript is a safe bet.\n\nRecently I have focused on chalking out a path about how to learn JavaScript effectively using a learning model. Please check it out in the video below. I believe that it will help you to learn the language faster.\n\nThe video above talks about how learning JavaScript effectively, and in this article, we will focus on the what part. We will go over the topics that you must consider putting on your plate when you plan to learn JavaScript.\n\nWe will also get introduced to a community-driven JavaScript Roadmap Guide that you can make use of in learning the language and also can contribute to. We will mention the chapters from the guide occasionally, but if you are interested, please feel free to check out the entire guide early.",
-      "thumbnail": "thumbnail-1708793953356-660744456.png",
-      "author": {
-        "id": "346d7a36b3c41f3fbfa2",
-        "firstName": "Tapas",
-        "lastName": "Adhikary",
-        "avatar": "avatar-1708764766479-243448656.png"
-      },
-      "tags": "programming, algorithm, prototype, javascript",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-02-24T16:59:13.363Z"
-    },
-    {
-      "id": "210470a416ea45b625b8",
-      "title": "Node.js back-end debugging process",
-      "content": "Node.js Debugging Tools\nNode.js provides a range of debugging tools and techniques to debug back-end applications. Here are some of the popular ones:\n\n1. Console.log()\nConsole.log() is one of the most basic and widely used debugging techniques in Node.js. It is a simple function that logs messages to the console, which can be used to trace the execution flow and identify bugs. For example:\n\n2. Debugger Statement\nDebugger statement is a built-in Node.js debugger that stops the execution of code at a specific point and allows you to inspect variables, call stack, and execute code line by line. For example:3. Node.js Debug Module\nThe Node.js debug module is a powerful tool that provides a range of debugging options, including:\n\nBreakpoints\nConditional breakpoints\nWatch expressions\nStepping over, into, and out of functions\nHere is an example of how to use the debug module:\n\n3. Node.js Debug Module\nThe Node.js debug module is a powerful tool that provides a range of debugging options, including:\n\nBreakpoints\nConditional breakpoints\nWatch expressions\nStepping over, into, and out of functions\nHere is an example of how to use the debug module:\n\n",
-      "thumbnail": "thumbnail-1708794403625-465722215.png",
-      "author": {
-        "id": "7830e5903b889750f1e3",
-        "firstName": "Sumit",
-        "lastName": "Saha",
-        "avatar": "avatar-1708764729322-387087910.png"
-      },
-      "tags": "programming, algorithm, prototype, javascript",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-02-24T17:06:43.629Z"
     },
     {
       "id": "4321b782f360f58c8c86",
@@ -551,6 +567,70 @@
       "comments": [],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
+    },
+    {
+      "id": "6c33b31ecaa2b8917db2",
+      "title": "লিনিয়ার সার্চ । ডেটা স্ট্রাকচার ও এলগোরিদম",
+      "content": "গত ৫-৬ বছর থেকে Android, Fontend, Backend, Web Security ইত্যাদি নিয়ে কাজ করতে করতে একটা সময় মনে হলো, কোনো একটা জিনিস শেখা বাদ পরে গেছে। একটু কিছু চিন্তার পর বুঝতে পারলাম প্রোগ্রামিং এর সব থেকে important জিনিসটাই শেখা হয় নাই। আর তা হলো “ Data Structure & Algorithm ” । এটির গুরুত্ব নিয়ে বলার কিছু নাই।\n\nতাই Quarantine এর শেষের দিকে মাইন্ড সেটআপ করলাম,সব কিছু বাদ দিয়ে DS & Algo তেই ফোকাস করবো। তাই Android Studio কে লাল সালাম দিয়ে শেখা শুরু করলাম । এখন যখন আমি এই পোস্টটি লিখছি, তখনো আমি Data Structure & Algorithm এ খুব ভালো না, বলতে গেলে পারিই না। একদম বাচ্চা আমি। তবে এই পোস্ট টি মূলত আমি নিজের জন্যেই লিখছি, যেন ভবিষ্যতে যদি কখনো দরকার পরে বা কিছু ভূলে যাই তখবে নিজের লেখা জার্নাল দেখে আবার মনে করে নিতে পারি। (তবে এই পোষ্ট গুলো অবশ্যই পাবলিক থাকবে যেন অন্য কেউ যদি চায়, এগুলো follow করতে পারে )তাই এই পোষ্ট কিংবা এর পরবর্তীতে Data Structure & Algorithm নিয়ে পোষ্ট গুলো তে ভূল থাকা স্বাভাবিক। ভুলত্রুটি গুলো দেখিয়ে দেবার অনুরোধ রইলো।\n\nলিনিয়ার সার্চ এলগোরিদম\n\nএই অনেক অনেক সার্চিং এলগোরিদমের মধ্যে লিনিয়ার সার্চ সব থেকে সহজ একটি এলগোরিদম। ধরুন আপনি একটি বই এর তাক থেকে কোনো একটি নিদৃষ্ট বই খুজবেন অথবা তো আমি চাইলে এক এক করে খুজে বের করতে পারেন অথবা randomly ও খুজতে পারেন। লিনিয়ার সার্চের ক্ষেত্রে আমরা নিদির্ষ্ট বইটি এক এক করে খুজবো।\nঅর্থাৎ বই এর তাকের প্রথম থেকে খোজা শুরু করবো, প্রথম বইটি দেখবো। সেটা কি আমাদের কাংখিত বই ? যদি বইটি আমরা পেয়ে যাই তবে খোজা বাদ দিবো আর না পেলে খুজতেই থাকবো যতক্ষন পর্যন্ত আমরা আমাদের কাংখিত বই টি না পাচ্ছি ।\n\n\nআচ্ছা ধরুন, একটি Array আছে যার মধ্যে ৫,১২,১৮,২০,২৬ এই ৫টি Int ভ্যালু আছে। এখন আমাদের খুজতে হবে ২০ ভ্যালু টি array এর কোন পজিশন/index এ আছে।\n\nতবে ২০ এর ইনডেক্স খোজার জন্য আমরা নিচের ধাপ গুলো ফলো করতে পারি\n\nধাপ-১ঃ ধরি লিস্টে n সংখ্যক উপাদান আছে।\n\nধাপ-২ঃ এখন আমরা i এর মান ০ নেই এবং i এর মান (n-1) পর্যন্ত বাড়াতে থাকবো। প্রতিটি মানের জন্যে ধাপ-৩ এ যাই।\n\nধাপ-৩ঃ i এর মান array এর পজিশন/ইনডেক্স হিসেবে চিন্তা করি এবং array[i] এর ভ্যালু আমাদের কাংক্ষিত ভ্যালুর সাথে মিলে কিনা তা চেক করে দেখি। যদি মিলে যায় তবে ধাপঃ৪ এ যাই নাহলে আবার ধাপঃ২ এ যাই।\n\nধাপ-৪ঃ i এর ভ্যালু return করি এবং প্রোগ্রাম বন্ধ করি ।",
+      "thumbnail": "thumbnail-1708765461841-967006271.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "programming, algorithm",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-02-24T09:04:21.871Z"
+    },
+    {
+      "id": "9d5598ab44600a379103",
+      "title": "Dev Retro 2022: What made me a better developer this year?",
+      "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
+      "thumbnail": "thumbnail-1708793859418-241650391.png",
+      "author": {
+        "id": "346d7a36b3c41f3fbfa2",
+        "firstName": "Tapas",
+        "lastName": "Adhikary",
+        "avatar": "avatar-1708764766479-243448656.png"
+      },
+      "tags": "programming, algorithm, prototype, javascript",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-02-24T16:57:39.425Z"
+    },
+    {
+      "id": "965584a7b281d9f99c14",
+      "title": "What do you need to know to become proficient in JavaScript?",
+      "content": "JavaScript is everywhere! It's the web browser's language and helps you create web, mobile, and desktop applications. Today, JavaScript is not limited to the client side alone; it is equally popular as the base of server-side frameworks like Node.js and Deno. If you are considering picking up and mastering a programming language, JavaScript is a safe bet.\n\nRecently I have focused on chalking out a path about how to learn JavaScript effectively using a learning model. Please check it out in the video below. I believe that it will help you to learn the language faster.\n\nThe video above talks about how learning JavaScript effectively, and in this article, we will focus on the what part. We will go over the topics that you must consider putting on your plate when you plan to learn JavaScript.\n\nWe will also get introduced to a community-driven JavaScript Roadmap Guide that you can make use of in learning the language and also can contribute to. We will mention the chapters from the guide occasionally, but if you are interested, please feel free to check out the entire guide early.",
+      "thumbnail": "thumbnail-1708793953356-660744456.png",
+      "author": {
+        "id": "346d7a36b3c41f3fbfa2",
+        "firstName": "Tapas",
+        "lastName": "Adhikary",
+        "avatar": "avatar-1708764766479-243448656.png"
+      },
+      "tags": "programming, algorithm, prototype, javascript",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-02-24T16:59:13.363Z"
+    },
+    {
+      "id": "210470a416ea45b625b8",
+      "title": "Node.js back-end debugging process",
+      "content": "Node.js Debugging Tools\nNode.js provides a range of debugging tools and techniques to debug back-end applications. Here are some of the popular ones:\n\n1. Console.log()\nConsole.log() is one of the most basic and widely used debugging techniques in Node.js. It is a simple function that logs messages to the console, which can be used to trace the execution flow and identify bugs. For example:\n\n2. Debugger Statement\nDebugger statement is a built-in Node.js debugger that stops the execution of code at a specific point and allows you to inspect variables, call stack, and execute code line by line. For example:3. Node.js Debug Module\nThe Node.js debug module is a powerful tool that provides a range of debugging options, including:\n\nBreakpoints\nConditional breakpoints\nWatch expressions\nStepping over, into, and out of functions\nHere is an example of how to use the debug module:\n\n3. Node.js Debug Module\nThe Node.js debug module is a powerful tool that provides a range of debugging options, including:\n\nBreakpoints\nConditional breakpoints\nWatch expressions\nStepping over, into, and out of functions\nHere is an example of how to use the debug module:\n\n",
+      "thumbnail": "thumbnail-1708794403625-465722215.png",
+      "author": {
+        "id": "7830e5903b889750f1e3",
+        "firstName": "Sumit",
+        "lastName": "Saha",
+        "avatar": "avatar-1708764729322-387087910.png"
+      },
+      "tags": "programming, algorithm, prototype, javascript",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-02-24T17:06:43.629Z"
     }
   ]
 }

@@ -30,6 +30,12 @@ const YourFavoritesContainer = () => {
     auth?.user && fetchPopularBlogs();
   }, [api, auth?.user]);
   let content;
+  if (state?.loading) {
+    content = <Loading />;
+  }
+  if (state?.favouriteBlogs?.length === 0) {
+    content = <NotFound message={"not added yet"} />;
+  }
   if (state?.favouriteBlogs?.length > 0) {
     content = state?.favouriteBlogs?.map((favouriteBlog) => (
       <YourFavouriteBlogList
@@ -37,12 +43,6 @@ const YourFavoritesContainer = () => {
         favouriteBlog={favouriteBlog}
       />
     ));
-  }
-  if (state?.loading) {
-    content = <Loading />;
-  }
-  if (state?.favouriteBlogs?.length === 0) {
-    content = <NotFound message={"not added yet"} />;
   }
   if (state?.error) {
     content = <NotFound message={`an error occurred ${error.message}`} />;

@@ -80,7 +80,7 @@ const Header = () => {
                   to="/logout"
                   className="px-6 py-2 text-white transition-all duration-200 bg-red-600 rounded-md md:py-3 hover:bg-red-700"
                 >
-                  Lgout
+                  Logout
                 </Link>
               </li>
             ) : (

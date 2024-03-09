@@ -106,7 +106,7 @@ const Register = () => {
               error={errors.email}
             >
               <input
-                {...register("email", { required: "email required" })}
+                {...register("email", { required: "email is required" })}
                 type="email"
                 id="email"
                 name="email"
