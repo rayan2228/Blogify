@@ -11,6 +11,7 @@ const actions = {
         dataFetched: "blogDataFetched",
         dataFetchedError: "blogDataFetchedError",
         singleDataFetched: "singleDataFetched",
+        popularDataFetched: "popularDataFetched",
     }
 }
 

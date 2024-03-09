@@ -3,6 +3,7 @@ import actions from "../actions"
 const initialState = {
     blogs: [],
     blog: null,
+    popularBlogs: [],
     loading: false,
     error: null,
 }
@@ -35,6 +36,13 @@ const blogReducer = (state, action) => {
                 ...state,
                 loading: false,
                 blog: action.data,
+            }
+        }
+        case actions.blogs.popularDataFetched: {
+            return {
+                ...state,
+                loading: false,
+                popularBlogs: action.data,
             }
         }
         default: {

@@ -50,6 +50,9 @@ const BlogsContainer = () => {
   if (state?.blogs?.length === 0) {
     <NotFound message={"no blog found"} />;
   }
+  if (state?.error) {
+    <NotFound message={`an error occurred ${error.message}`} />;
+  }
   return (
     <div className="space-y-3 md:col-span-5">
       {content}
