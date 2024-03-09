@@ -103,10 +103,12 @@ const SingleBlog = () => {
           <CommentsContainer blogComments={state?.blog?.comments} />
         )}
         {/* End Blogs */}
-        <SingleBlogActions
-          likes={state?.blog?.likes}
-          comments={state?.blog?.comments}
-        />
+        {state?.blog && (
+          <SingleBlogActions
+            likes={state?.blog?.likes}
+            comments={state?.blog?.comments}
+          />
+        )}
       </main>
     </>
   );

@@ -6,7 +6,9 @@ const useLoginModal = () => {
   const checkAuth = () => {
     if (!auth?.user) {
       setShowLoginModal(true);
+      return false
     }
+    return true
   };
   useEffect(() => {
     if (auth?.user) {
