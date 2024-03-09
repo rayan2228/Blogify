@@ -16,6 +16,7 @@ const CommentsContainer = ({ blogComments }) => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
     setError,
   } = useForm();
   const { api } = useAxios();
@@ -26,6 +27,7 @@ const CommentsContainer = ({ blogComments }) => {
       });
       if (res.status === 200) {
         setComments(res?.data?.comments);
+        reset();
       }
     } catch (error) {
       setError("root.random", {

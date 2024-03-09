@@ -3,8 +3,8 @@ import actions from "../actions"
 const initialState = {
     blogs: [],
     blog: null,
-    popularBlogs: [],
-    favouriteBlogs: [],
+    popularBlogs: null,
+    favouriteBlogs: null,
     loading: false,
     error: null,
 }

@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import useProfile from "../../hooks/useProfile";
 import Img from "../layouts/Img";
+import CommentActions from "./CommentActions";
+import useAuth from "../../hooks/useAuth";
 
 const SingleComment = ({ commentInfo }) => {
   const { state: profile } = useProfile();
+  const { auth } = useAuth();
   return (
     <div className="flex items-start my-8 space-x-4">
       <Link to={`/profile/${commentInfo?.author?.id}`}>
@@ -22,7 +25,7 @@ const SingleComment = ({ commentInfo }) => {
           </div>
         )}
       </Link>
-      <div className="w-full">
+      <div className="relative w-full">
         <h5 className="font-bold text-slate -500">
           <Link to={`/profile/${commentInfo?.author?.id}`}>
             {commentInfo?.author?.firstName}
@@ -30,6 +33,7 @@ const SingleComment = ({ commentInfo }) => {
           </Link>
         </h5>
         <p className="text-slate-300">{commentInfo.content}</p>
+        {auth?.user?.id === commentInfo?.author?.id && <CommentActions />}
       </div>
     </div>
   );
