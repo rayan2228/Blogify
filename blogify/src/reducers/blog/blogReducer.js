@@ -16,6 +16,8 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: true,
+                error: null,
+                searchedBlogs: null
             }
         }
         case actions.blogs.dataFetched: {

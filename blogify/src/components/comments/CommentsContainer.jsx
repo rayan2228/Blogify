@@ -33,6 +33,7 @@ const CommentsContainer = () => {
         reset();
       }
     } catch (error) {
+      console.log(error);
       setError("root.random", {
         type: "random",
         message: error.response?.data?.error,
@@ -43,7 +44,7 @@ const CommentsContainer = () => {
     <section id="comments">
       <div className="container w-full mx-auto md:w-10/12">
         <h2 className="my-8 text-3xl font-bold">
-          Comments ({comments?.length})
+          Comments ({comments?.length ?? 0})
         </h2>
         {auth?.user ? (
           <div className="flex space-x-4 items -center">

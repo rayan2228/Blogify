@@ -11,12 +11,10 @@ const SearchWrapper = () => {
   const [searchTerms, setSearchTerms] = useState("");
   const [state, dispatch] = useReducer(blogReducer, initialState);
   const searchBlogs = async (searchTerms) => {
-    dispatch({ type: actions.blogs.dataFetching });
     let lowerCaseSearchTerms = searchTerms.toLowerCase();
     try {
       let res = await api.get(`search?q=${lowerCaseSearchTerms}`);
       if (res.status === 200) {
-        console.log(res);
         dispatch({
           type: actions.blogs.searchedBlogsDataFetched,
           data: res?.data?.data,
@@ -34,6 +32,7 @@ const SearchWrapper = () => {
   }, 1000);
   useEffect(() => {
     if (searchTerms) {
+      dispatch({ type: actions.blogs.dataFetching });
       handleSearch();
     }
   }, [searchTerms]);
@@ -50,6 +49,9 @@ const SearchWrapper = () => {
     content = (
       <NotFound message={`an error occurred ${state?.error.message}`} />
     );
+  }
+  if (state?.error && searchTerms) {
+    content = <NotFound message={`no blog found`} />;
   }
   return (
     <>

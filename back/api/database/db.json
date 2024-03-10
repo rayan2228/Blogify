@@ -182,6 +182,27 @@
       "bio": "",
       "password": "$2b$08$eUyHJa9Mw2lTHTNhsUluqOijYMcOa.UsAY/H8tKwDL8VH8pItjNWW",
       "favourites": []
+    },
+    {
+      "id": "52d88a1841cf076fbf84",
+      "email": "woka@mailinator.com",
+      "firstName": "Dawn",
+      "lastName": "Hunter",
+      "avatar": null,
+      "bio": "",
+      "password": "$2b$08$oX2iGsXH0ABQenb1O4ULauGLa9ptHgitdUiIlrTDMNwp.FuksWxwe",
+      "favourites": [
+        {
+          "id": "7c12b4b48531bcc995ae",
+          "title": "A guide to Prototype in JavaScript",
+          "tags": "programming, algorithm, prototype, javascript"
+        },
+        {
+          "id": "4321b782f360f58c8c89",
+          "title": "React useMemo Hook",
+          "tags": "android, java, kotlin, permission"
+        }
+      ]
     }
   ],
   "blogs": [
@@ -340,6 +361,16 @@
             "lastName": "Powell",
             "avatar": "avatar-1709813207078-254417079.jpg"
           }
+        },
+        {
+          "id": "ff148a262f7f84306290",
+          "content": "y",
+          "author": {
+            "id": "52d88a1841cf076fbf84",
+            "firstName": "Dawn",
+            "lastName": "Hunter",
+            "avatar": null
+          }
         }
       ],
       "createdAt": "2024-02-24T09:09:01.121Z"
@@ -362,6 +393,9 @@
         },
         {
           "id": "dcb26bc440f49e128a20"
+        },
+        {
+          "id": "52d88a1841cf076fbf84"
         }
       ],
       "comments": [
@@ -374,8 +408,42 @@
             "lastName": "Adhikary",
             "avatar": "avatar-1708764766479-243448656.png"
           }
+        },
+        {
+          "id": "323cb598203a5bd12464",
+          "content": "asdasd",
+          "author": {
+            "id": "52d88a1841cf076fbf84",
+            "firstName": "Dawn",
+            "lastName": "Hunter",
+            "avatar": null
+          }
         }
       ],
+      "createdAt": "2024-02-24T09:01:37.581Z",
+      "isFavourite": false
+    },
+    {
+      "id": "4321b782f360f58c8c88",
+      "title": "JSON Parse | Android | Java",
+      "content": "JSON stands for JavaScript Object Notation. It is structured, lightweight, human-readable and easy to parse. It’s the best alternative to XML when our android app needs to interchange data from the server. XML parsing is very complex as compare to JSON parsing. First, We have to understand how JSON works. JSON contains Objects, Arrays and key and value. An object is represented by Curly Braces: “{}”, Array is represented by Square Brackets: “[]” Everything between curly braces :{} is called JSON Object & everything between square brackets : [] is a JSON Object. A JSON object can contain different key-value pairs. The value of a key can be an Array. And Array may contain different Objects. And Multiple objects are separated by a comma. Seems difficult?\n\nNo, It’s not. See the Sample JSON file which will help you to understand it by your own and we will use this to fetch data. This JSON file is hosted on https://api.myjson.com/bins/xcuq8",
+      "thumbnail": "thumbnail-4321b782f360f58c8c86.webp",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "android, java, kotlin, permission",
+      "likes": [
+        {
+          "id": "346d7a36b3c41f3fbfa2"
+        },
+        {
+          "id": "2ce948124ef474ee5e4f"
+        }
+      ],
+      "comments": [],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
     },
@@ -453,30 +521,6 @@
       "isFavourite": false
     },
     {
-      "id": "4321b782f360f58c8c88",
-      "title": "JSON Parse | Android | Java",
-      "content": "JSON stands for JavaScript Object Notation. It is structured, lightweight, human-readable and easy to parse. It’s the best alternative to XML when our android app needs to interchange data from the server. XML parsing is very complex as compare to JSON parsing. First, We have to understand how JSON works. JSON contains Objects, Arrays and key and value. An object is represented by Curly Braces: “{}”, Array is represented by Square Brackets: “[]” Everything between curly braces :{} is called JSON Object & everything between square brackets : [] is a JSON Object. A JSON object can contain different key-value pairs. The value of a key can be an Array. And Array may contain different Objects. And Multiple objects are separated by a comma. Seems difficult?\n\nNo, It’s not. See the Sample JSON file which will help you to understand it by your own and we will use this to fetch data. This JSON file is hosted on https://api.myjson.com/bins/xcuq8",
-      "thumbnail": "thumbnail-4321b782f360f58c8c86.webp",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "android, java, kotlin, permission",
-      "likes": [
-        {
-          "id": "346d7a36b3c41f3fbfa2"
-        },
-        {
-          "id": "2ce948124ef474ee5e4f"
-        }
-      ],
-      "comments": [],
-      "createdAt": "2024-02-24T09:01:37.581Z",
-      "isFavourite": false
-    },
-    {
       "id": "4321b782f360f58c8c89",
       "title": "React useMemo Hook",
       "content": "useMemo is used to memoize the result of a function, meaning it caches the result and returns it when the inputs to that function haven't changed since the last render. It takes two arguments: the function to memoize and an array of dependencies. If any of the dependencies change between renders, the memoized function is re-executed; otherwise, the cached result is returned.",
@@ -491,6 +535,9 @@
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
+        },
+        {
+          "id": "52d88a1841cf076fbf84"
         }
       ],
       "comments": [],
