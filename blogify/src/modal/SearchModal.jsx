@@ -5,7 +5,7 @@ import SearchWrapper from "../components/search/SearchWrapper";
 const SearchModal = ({ onclose }) => {
   return (
     <ModalWrapper onClose={onclose}>
-      <SearchWrapper />
+      <SearchWrapper onClose={onclose} />
     </ModalWrapper>
   );
 };

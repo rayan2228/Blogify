@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer, useRef, useState } from "react";
 import SearchResult from "../search/SearchResult";
 import { blogReducer, initialState } from "../../reducers/blog/blogReducer";
 import actions from "../../reducers/actions";
@@ -7,7 +7,7 @@ import useDebounce from "../../hooks/useDebounce";
 import Loading from "../layouts/Loading";
 import { useEffect } from "react";
 import NotFound from "../layouts/NotFound";
-const SearchWrapper = () => {
+const SearchWrapper = ({ onClose }) => {
   const [searchTerms, setSearchTerms] = useState("");
   const [state, dispatch] = useReducer(blogReducer, initialState);
   const searchBlogs = async (searchTerms) => {
@@ -42,7 +42,7 @@ const SearchWrapper = () => {
   }
   if (state?.searchedBlogs?.length > 0) {
     content = state?.searchedBlogs?.map((blog) => (
-      <SearchResult key={blog?.id} blog={blog} onClose={onclose} />
+      <SearchResult key={blog?.id} blog={blog} onClose={onClose} />
     ));
   }
   if (state?.error) {
@@ -61,7 +61,7 @@ const SearchWrapper = () => {
         </h3>
         <input
           type="text"
-          // placeholder="Start Typing to Search"
+          placeholder="Start Typing to Search"
           className="w-full p-2 text-base text-white bg-transparent border-none rounded-lg outline-none focus:ring focus:ring-indigo-600"
           value={searchTerms}
           onChange={(e) => {
