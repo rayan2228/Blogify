@@ -5,7 +5,9 @@ import useAxios from "../../hooks/useAxios";
 import DeleteConfirmationModal from "../../modal/DeleteConfirmationModal";
 import Img from "../layouts/Img";
 import { useState } from "react";
+import useComment from "../../hooks/useComment";
 const CommentActions = ({ commentId }) => {
+  const { setComments } = useComment();
   const { blogId } = useParams();
   const [showCommentActions, setShowCommentActions] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -14,6 +16,7 @@ const CommentActions = ({ commentId }) => {
     try {
       const res = await api.delete(`/blogs/${blogId}/comment/${Id}`);
       if (res.status === 200) {
+        setComments(res.data?.comments);
         setShowDeleteModal(false);
       }
     } catch (error) {

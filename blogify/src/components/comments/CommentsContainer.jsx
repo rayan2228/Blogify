@@ -6,12 +6,12 @@ import Img from "../layouts/Img";
 import { useForm } from "react-hook-form";
 import InputField from "../layouts/InputField";
 import useAxios from "../../hooks/useAxios";
-import { useState } from "react";
 import LoginModal from "../../modal/LoginModal";
 import useLoginModal from "../../hooks/useLoginModal";
-const CommentsContainer = ({ blogComments }) => {
+import useComment from "../../hooks/useComment";
+const CommentsContainer = () => {
+  const { comments, setComments } = useComment();
   const { setShowLoginModal, showLoginModal } = useLoginModal();
-  const [comments, setComments] = useState(blogComments);
   const { blogId } = useParams();
   const { auth } = useAuth();
   const { state: profile } = useProfile();

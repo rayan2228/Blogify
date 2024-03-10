@@ -9,14 +9,15 @@ import { useEffect, useState } from "react";
 import useAxios from "../../hooks/useAxios";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import useComment from "../../hooks/useComment";
 
-const SingleBlogActions = ({ likes, comments }) => {
+const SingleBlogActions = ({ likes }) => {
   const { auth } = useAuth();
   const { api } = useAxios();
   const { blogId } = useParams();
+  const { comments } = useComment();
   const [lengths, setLengths] = useState({
     likes: likes,
-    comments: comments,
   });
   const [isLiked, setIsLiked] = useState(
     lengths.likes?.some((userID) => userID.id === auth?.user?.id)
@@ -27,7 +28,6 @@ const SingleBlogActions = ({ likes, comments }) => {
     if (isAuth) {
       try {
         let res = await api.post(`blogs/${blogId}/like`);
-        console.log(res);
         setLengths({ ...lengths, likes: res?.data?.likes });
         setIsLiked(res?.data?.isLiked);
       } catch (error) {
@@ -53,7 +53,7 @@ const SingleBlogActions = ({ likes, comments }) => {
           <a href="#comments">
             <li>
               <Img src={commentIcon} alt="Comments" />
-              <span>{lengths.comments?.length}</span>
+              <span>{comments?.length}</span>
             </li>
           </a>
         </ul>

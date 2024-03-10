@@ -1,9 +1,8 @@
 import Container from "../components/layouts/Container";
 import Img from "../components/layouts/Img";
 import CommentsContainer from "../components/comments/CommentsContainer";
-
 import { Link, useParams } from "react-router-dom";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import api from "../api";
 import { blogReducer, initialState } from "../reducers/blog/blogReducer";
 import actions from "../reducers/actions";
@@ -11,10 +10,12 @@ import Loading from "../components/layouts/Loading";
 import NotFound from "../components/layouts/NotFound";
 import useProfile from "../hooks/useProfile";
 import SingleBlogActions from "../components/singleBlog/SingleBlogActions";
+import { CommentContext } from "../context";
 const SingleBlog = () => {
   const { blogId } = useParams();
   const [state, dispatch] = useReducer(blogReducer, initialState);
   const { state: profile } = useProfile();
+  const [comments, setComments] = useState({});
   useEffect(() => {
     const fetchSingleBlog = async () => {
       dispatch({ type: actions.blogs.dataFetching });
@@ -22,6 +23,7 @@ const SingleBlog = () => {
         const res = await api.get(`/blogs/${blogId}`);
         if (res.status === 200) {
           dispatch({ type: actions.blogs.singleDataFetched, data: res.data });
+          setComments(res.data.comments);
         }
       } catch (error) {
         dispatch({ type: actions.blogs.dataFetchedError });
@@ -94,23 +96,16 @@ const SingleBlog = () => {
     );
   }
   return (
-    <>
+    <CommentContext.Provider value={{ comments, setComments }}>
       <main>
         {/* Begin Blogs */}
         <Container>{content}</Container>
         {/* Begin Comments */}
-        {state?.blog && (
-          <CommentsContainer blogComments={state?.blog?.comments} />
-        )}
+        {state?.blog && <CommentsContainer />}
         {/* End Blogs */}
-        {state?.blog && (
-          <SingleBlogActions
-            likes={state?.blog?.likes}
-            comments={state?.blog?.comments}
-          />
-        )}
+        {state?.blog && <SingleBlogActions likes={state?.blog?.likes} />}
       </main>
-    </>
+    </CommentContext.Provider>
   );
 };
 
