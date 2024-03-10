@@ -80,7 +80,28 @@
       "avatar": null,
       "bio": "",
       "password": "$2b$08$jYO0EyoaNnG9W8lZJazKsuqPW7ToAVl.c0..UsHg5PDkWPzUHFIi6",
-      "favourites": []
+      "favourites": [
+        {
+          "id": "4321b782f360f58c8c87",
+          "title": "Create Custom Dialog with listview | Android | Java",
+          "tags": "android, java, kotlin, permission"
+        },
+        {
+          "id": "7c12b4b48531bcc995ae",
+          "title": "A guide to Prototype in JavaScript",
+          "tags": "programming, algorithm, prototype, javascript"
+        },
+        {
+          "id": "4321b782f360f58c8c85",
+          "title": "Scope and Scope Chain in JavaScript",
+          "tags": "JavaScript, Async, Scope"
+        },
+        {
+          "id": "4321b782f360f58c8c88",
+          "title": "JSON Parse | Android | Java",
+          "tags": "android, java, kotlin, permission"
+        }
+      ]
     },
     {
       "id": "38e3e27a01185be7c253",
@@ -446,6 +467,9 @@
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
+        },
+        {
+          "id": "2ce948124ef474ee5e4f"
         }
       ],
       "comments": [],

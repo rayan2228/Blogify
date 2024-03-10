@@ -8,10 +8,10 @@ const YourFavouriteBlogList = ({ favouriteBlog }) => {
           {favouriteBlog.title}
         </Link>
       </h3>
-      <ul className="flex gap-x-2">
+      <ul className="flex flex-wrap gap-x-2">
         {favouriteBlog?.tags?.split(",")?.map((tag, index) => (
           <li className="text-sm text-slate-600" key={index}>
-            # {tag}
+            #{tag}
           </li>
         ))}
       </ul>

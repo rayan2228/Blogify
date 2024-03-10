@@ -14,7 +14,7 @@ const YourFavoritesContainer = () => {
   const { api } = useAxios();
   useEffect(() => {
     dispatch({ type: actions.blogs.dataFetching });
-    const fetchPopularBlogs = async () => {
+    const fetchFavouritesBlogs = async () => {
       try {
         const res = await api.get(`/blogs/favourites`);
         if (res.status === 200) {
@@ -27,7 +27,7 @@ const YourFavoritesContainer = () => {
         dispatch({ type: actions.blogs.dataFetchedError });
       }
     };
-    auth?.user && fetchPopularBlogs();
+    auth?.user && fetchFavouritesBlogs();
   }, [api, auth?.user]);
   let content;
   if (state?.loading) {
