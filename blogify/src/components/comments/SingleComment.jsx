@@ -33,7 +33,9 @@ const SingleComment = ({ commentInfo }) => {
           </Link>
         </h5>
         <p className="text-slate-300">{commentInfo.content}</p>
-        {auth?.user?.id === commentInfo?.author?.id && <CommentActions />}
+        {auth?.user?.id === commentInfo?.author?.id && (
+          <CommentActions commentId={commentInfo?.id} />
+        )}
       </div>
     </div>
   );
