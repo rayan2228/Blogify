@@ -5,6 +5,7 @@ const initialState = {
     blog: null,
     popularBlogs: null,
     favouriteBlogs: null,
+    searchedBlogs: null,
     loading: false,
     error: null,
 }
@@ -14,13 +15,14 @@ const blogReducer = (state, action) => {
         case actions.blogs.dataFetching: {
             return {
                 ...state,
-                loading: true
+                loading: true,
             }
         }
         case actions.blogs.dataFetched: {
             return {
                 ...state,
                 loading: false,
+                error: false,
                 blogs: [...state.blogs, ...action.data],
             }
         }
@@ -28,7 +30,11 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                blogs: null,
+                blogs: [],
+                blog: null,
+                popularBlogs: null,
+                favouriteBlogs: null,
+                searchedBlogs: null,
                 error: action.error
             }
         }
@@ -36,6 +42,7 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
+                error: false,
                 blog: action.data,
             }
         }
@@ -43,6 +50,7 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
+                error: false,
                 popularBlogs: action.data,
             }
         }
@@ -50,7 +58,16 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
+                error: false,
                 favouriteBlogs: action.data,
+            }
+        }
+        case actions.blogs.searchedBlogsDataFetched: {
+            return {
+                ...state,
+                loading: false,
+                error: false,
+                searchedBlogs: action.data
             }
         }
         default: {

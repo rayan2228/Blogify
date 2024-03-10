@@ -29,9 +29,8 @@ const Bio = () => {
     } catch (error) {
       dispatch({
         type: actions.profile.dataFetchedError,
-        data: error.message,
+        data: error,
       });
-      console.log(error);
     }
   };
   return (

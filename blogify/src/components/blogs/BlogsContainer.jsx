@@ -22,7 +22,10 @@ const BlogsContainer = () => {
           setPage((prevPage) => prevPage + 1);
         }
       } catch (error) {
-        dispatch({ type: actions.blogs.dataFetchedError });
+        dispatch({
+          type: actions.blogs.dataFetchedError,
+          error: error,
+        });
       }
     };
     const onIntersection = (items) => {
@@ -51,7 +54,7 @@ const BlogsContainer = () => {
     <NotFound message={"no blog found"} />;
   }
   if (state?.error) {
-    <NotFound message={`an error occurred ${error.message}`} />;
+    <NotFound message={`an error occurred ${state?.error.message}`} />;
   }
   return (
     <div className="space-y-3 md:col-span-5">

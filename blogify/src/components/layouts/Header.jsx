@@ -4,8 +4,8 @@ import search from "../../assets/icons/search.svg";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useProfile from "../../hooks/useProfile";
-import ModalWrapper from "../../modal/ModalWrapper";
 import { useState } from "react";
+import SearchModal from "../../modal/SearchModal";
 const Header = () => {
   const { auth } = useAuth();
   const { state } = useProfile();
@@ -101,117 +101,7 @@ const Header = () => {
         </nav>
       </header>
       {showSearchModal && (
-        <ModalWrapper onClose={() => setShowSearchModal(false)}>
-          <>
-            {/* Search */}
-            <div>
-              <h3 className="pl-2 my-2 text-xl font-bold text-slate-400">
-                Search for Your Desire Blogs
-              </h3>
-              <input
-                type="text"
-                placeholder="Start Typing to Search"
-                className="w-full p-2 text-base text-white bg-transparent border-none rounded-lg outline-none focus:ring focus:ring-indigo-600"
-              />
-            </div>
-            {/* Search Result */}
-            <div className="">
-              <h3 className="mt-6 font-bold text-slate-400">Search Results</h3>
-              <div className="my-4 divide-y-2 divide-slate-500/30 max-h-[440px] overflow-y-scroll overscroll-contain">
-                <div className="flex gap-6 py-2">
-                  <img
-                    className="object-contain h-28"
-                    src="./assets/blogs/taiulwind-cn-thumb.jpg"
-                    alt=""
-                  />
-                  <div className="mt-2">
-                    <h3 className="text-xl font-bold text-slate-300">
-                      Style your components with TailwindCSS
-                    </h3>
-                    {/* Meta Informations */}
-                    <p className="mt-1 mb-6 text-sm text-slate-500">
-                      Aenean eleifend ante maecenas pulvinar montes lorem et
-                      pede dis dolor pretium donec dictum. Vici consequat justo
-                      enim. Venenatis eget adipiscing luctus lorem.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-6 py-2">
-                  <img
-                    className="object-contain h-28"
-                    src="./assets/blogs/taiulwind-cn-thumb.jpg"
-                    alt=""
-                  />
-                  <div className="mt-2">
-                    <h3 className="text-xl font-bold text-slate-300">
-                      Style your components with TailwindCSS
-                    </h3>
-                    {/* Meta Informations */}
-                    <p className="mt-1 mb-6 text-sm text-slate-500">
-                      Aenean eleifend ante maecenas pulvinar montes lorem et
-                      pede dis dolor pretium donec dictum. Vici consequat justo
-                      enim. Venenatis eget adipiscing luctus lorem.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-6 py-2">
-                  <img
-                    className="object-contain h-28"
-                    src="./assets/blogs/taiulwind-cn-thumb.jpg"
-                    alt=""
-                  />
-                  <div className="mt-2">
-                    <h3 className="text-xl font-bold text-slate-300">
-                      Style your components with TailwindCSS
-                    </h3>
-                    {/* Meta Informations */}
-                    <p className="mt-1 mb-6 text-sm text-slate-500">
-                      Aenean eleifend ante maecenas pulvinar montes lorem et
-                      pede dis dolor pretium donec dictum. Vici consequat justo
-                      enim. Venenatis eget adipiscing luctus lorem.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-6 py-2">
-                  <img
-                    className="object-contain h-28"
-                    src="./assets/blogs/taiulwind-cn-thumb.jpg"
-                    alt=""
-                  />
-                  <div className="mt-2">
-                    <h3 className="text-xl font-bold text-slate-300">
-                      Style your components with TailwindCSS
-                    </h3>
-                    {/* Meta Informations */}
-                    <p className="mt-1 mb-6 text-sm text-slate-500">
-                      Aenean eleifend ante maecenas pulvinar montes lorem et
-                      pede dis dolor pretium donec dictum. Vici consequat justo
-                      enim. Venenatis eget adipiscing luctus lorem.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-6 py-2">
-                  <img
-                    className="object-contain h-28"
-                    src="./assets/blogs/taiulwind-cn-thumb.jpg"
-                    alt=""
-                  />
-                  <div className="mt-2">
-                    <h3 className="text-xl font-bold text-slate-300">
-                      Style your components with TailwindCSS
-                    </h3>
-                    {/* Meta Informations */}
-                    <p className="mt-1 mb-6 text-sm text-slate-500">
-                      Aenean eleifend ante maecenas pulvinar montes lorem et
-                      pede dis dolor pretium donec dictum. Vici consequat justo
-                      enim. Venenatis eget adipiscing luctus lorem.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        </ModalWrapper>
+        <SearchModal onclose={() => setShowSearchModal(false)} />
       )}
     </>
   );

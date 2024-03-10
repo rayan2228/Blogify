@@ -20,7 +20,7 @@ const MostPopularContainer = () => {
           });
         }
       } catch (error) {
-        dispatch({ type: actions.blogs.dataFetchedError });
+        dispatch({ type: actions.blogs.dataFetchedError, error: error });
       }
     };
     fetchPopularBlogs();
@@ -38,7 +38,9 @@ const MostPopularContainer = () => {
     <NotFound message={"no popular blog found"} />;
   }
   if (state?.error) {
-    content = <NotFound message={`an error occurred ${error.message}`} />;
+    content = (
+      <NotFound message={`an error occurred ${state?.error.message}`} />
+    );
   }
   return (
     <div className="sidebar-card">

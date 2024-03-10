@@ -24,7 +24,7 @@ const YourFavoritesContainer = () => {
           });
         }
       } catch (error) {
-        dispatch({ type: actions.blogs.dataFetchedError });
+        dispatch({ type: actions.blogs.dataFetchedError, error: error });
       }
     };
     auth?.user && fetchFavouritesBlogs();
@@ -45,7 +45,9 @@ const YourFavoritesContainer = () => {
     ));
   }
   if (state?.error) {
-    content = <NotFound message={`an error occurred ${error.message}`} />;
+    content = (
+      <NotFound message={`an error occurred ${state?.error.message}`} />
+    );
   }
   return (
     <div className="sidebar-card">
