@@ -1,9 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import InputField from "../../components/layouts/InputField";
+import InputField from "../layouts/InputField";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
-const LoginUI = () => {
+const LoginUI = ({ onSwap }) => {
   const { pathname } = useLocation();
   const { setAuth } = useAuth();
   const navigate = useNavigate();
@@ -119,9 +119,18 @@ const LoginUI = () => {
         </div>
         <p className="text-center">
           Don't have an account?{" "}
-          <Link to="/register" className="text-indigo-600 hover:underline">
-            Register
-          </Link>
+          {pathname === "/login" ? (
+            <Link to="/register" className="text-indigo-600 hover:underline">
+              Register
+            </Link>
+          ) : (
+            <span
+              onClick={onSwap}
+              className="text-indigo-600 cursor-pointer hover:underline"
+            >
+              Register
+            </span>
+          )}
         </p>
       </form>
     </div>

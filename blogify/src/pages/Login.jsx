@@ -1,5 +1,5 @@
 import Container from "../components/layouts/Container";
-import LoginUI from "../components/loginUI/LoginUI";
+import LoginUI from "../components/authUI/LoginUI";
 
 const Login = () => {
   return (

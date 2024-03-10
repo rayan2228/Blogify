@@ -7,7 +7,10 @@ import { useForm } from "react-hook-form";
 import InputField from "../layouts/InputField";
 import useAxios from "../../hooks/useAxios";
 import { useState } from "react";
+import LoginModal from "../../modal/LoginModal";
+import useLoginModal from "../../hooks/useLoginModal";
 const CommentsContainer = ({ blogComments }) => {
+  const { setShowLoginModal, showLoginModal } = useLoginModal();
   const [comments, setComments] = useState(blogComments);
   const { blogId } = useParams();
   const { auth } = useAuth();
@@ -111,13 +114,21 @@ const CommentsContainer = ({ blogComments }) => {
             </div>
           </div>
         ) : (
-          <div className="p-2 text-lg text-center text-white capitalize bg-slate-900">
-            please{" "}
-            <Link to={"/login"} className="text-red-500 underline">
-              login
-            </Link>{" "}
-            to comment
-          </div>
+          <>
+            <div className="p-2 text-lg text-center text-white capitalize bg-slate-900">
+              please{" "}
+              <span
+                className="text-red-500 underline cursor-pointer"
+                onClick={() => setShowLoginModal(true)}
+              >
+                login
+              </span>{" "}
+              to comment
+            </div>
+            {showLoginModal && (
+              <LoginModal onClose={() => setShowLoginModal(false)} />
+            )}
+          </>
         )}
         {comments?.map((comment) => (
           <SingleComment key={comment.id} commentInfo={comment} />
