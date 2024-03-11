@@ -11,6 +11,7 @@ import NotFound from "../components/layouts/NotFound";
 import useProfile from "../hooks/useProfile";
 import SingleBlogActions from "../components/singleBlog/SingleBlogActions";
 import { CommentContext } from "../context";
+import getDateFormat from "../utils/getDateFormat";
 const SingleBlog = () => {
   const { blogId } = useParams();
   const [state, dispatch] = useReducer(blogReducer, initialState);
@@ -62,7 +63,9 @@ const SingleBlog = () => {
               </Link>
             </h5>
           </div>
-          <span className="text-sm text-slate-700 dot">June 28, 2018</span>
+          <span className="text-sm text-slate-700 dot">
+            {getDateFormat(state?.blog?.createdAt)}
+          </span>
           <span className="text-sm text-slate-700 dot">
             {state?.blog?.likes?.length} Likes
           </span>

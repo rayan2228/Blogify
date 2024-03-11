@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useProfile from "../../hooks/useProfile";
 import BlogActions from "./BlogActions";
 import useAuth from "../../hooks/useAuth";
+import getDateFormat from "../../utils/getDateFormat";
 const BlogList = ({ blog }) => {
   const { state } = useProfile();
   const { auth } = useAuth();
@@ -51,7 +52,7 @@ const BlogList = ({ blog }) => {
                 </Link>
               </h5>
               <div className="flex items-center text-xs text-slate-700">
-                <span>June 28, 2018</span>
+                <span>{getDateFormat(blog?.createdAt)}</span>
               </div>
             </div>
           </div>

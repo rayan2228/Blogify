@@ -7,7 +7,6 @@ import useAuth from "../../hooks/useAuth";
 const SingleComment = ({ commentInfo }) => {
   const { state: profile } = useProfile();
   const { auth } = useAuth();
-  console.log("asd", commentInfo);
   return (
     <div className="flex items-start my-8 space-x-4">
       <Link to={`/profile/${commentInfo?.author?.id}`}>
