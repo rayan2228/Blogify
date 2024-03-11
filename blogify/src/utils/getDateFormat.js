@@ -8,25 +8,18 @@ const getDateFormat = (fromDate) => {
     let message
 
     if (hourDiff > 0 && hourDiff < 24) {
-        console.log("1")
         message = `${hourDiff}h`
     } else if (hourDiff <= 24) {
-        console.log("2")
         message = '1d'
     } else if (hourDiff <= 48) {
-        console.log("3")
         message = '2d'
     } else if (hourDiff <= 72) {
-        console.log("4")
         message = '3d'
     } else if (hourDiff <= 96) {
-        console.log("5")
         message = '4d'
     } else if (hourDiff <= 120) {
-        console.log("5")
         message = '5d'
     } else {
-        console.log("6")
         message = new Date(fromDate).toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" })
     }
     if (minDiff > 0 && hourDiff < 24) {
