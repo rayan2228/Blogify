@@ -2,16 +2,34 @@ import { useForm } from "react-hook-form";
 import InputField from "../components/layouts/InputField";
 import { useState } from "react";
 import Img from "../components/layouts/Img";
+import useAxios from "../hooks/useAxios";
 
 const BlogWrite = () => {
   const [preview, setPreview] = useState(null);
+  const { api } = useAxios();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
   const formSubmit = async (formData) => {
-    console.log(formData);
+    const createFormData = new FormData();
+    createFormData.append("title", formData?.title);
+    createFormData.append("tags", formData?.tags);
+    createFormData.append("content", formData?.content);
+    if (formData.thumbnail.length > 0) {
+      createFormData.append("thumbnail", formData?.thumbnail[0]);
+    }
+    try {
+      let res = await api.post("/blogs", createFormData);
+      if (res.status === 201) {
+        reset();
+        console.log("ok");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <main>
@@ -28,7 +46,7 @@ const BlogWrite = () => {
                 />
               </div>
             )}
-            <InputField className={"mb-6"} error={errors.file}>
+            <InputField className={"mb-6"} error={errors.thumbnail}>
               <div className="grid place-items-center bg-slate-600/20 h-[150px] rounded-md my-4">
                 <div className="flex items-center gap-4 transition-all cursor-pointer hover:scale-110">
                   <svg
@@ -45,16 +63,16 @@ const BlogWrite = () => {
                       d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                     />
                   </svg>
-                  <label htmlFor="file">Upload Your Image</label>
+                  <label htmlFor="thumbnail">Upload Your Image</label>
                 </div>
                 <input
-                  {...register("file", {
+                  {...register("thumbnail", {
                     onChange: (e) =>
                       setPreview(URL.createObjectURL(e.target.files[0])),
                   })}
                   type="file"
-                  id="file"
-                  name="file"
+                  id="thumbnail"
+                  name="thumbnail"
                   className="hidden"
                 />
               </div>

@@ -10,13 +10,15 @@ const BlogList = ({ blog }) => {
 
   return (
     <div className="blog-card">
-      <Link to={`/single-blog/${blog?.id}`}>
-        <Img
-          className="blog-thumb"
-          src={`${import.meta.env.VITE_IMAGE_BASEURL}/blog/${blog.thumbnail}`}
-          alt={blog.thumbnail}
-        />
-      </Link>
+      {blog?.thumbnail && (
+        <Link to={`/single-blog/${blog?.id}`}>
+          <Img
+            className="blog-thumb"
+            src={`${import.meta.env.VITE_IMAGE_BASEURL}blog/${blog.thumbnail}`}
+            alt={blog.thumbnail}
+          />
+        </Link>
+      )}
       <div className="relative mt-2">
         <Link to={`/single-blog/${blog?.id}`}>
           <h3 className="text-xl text-slate-300 lg:text-2xl">{blog.title}</h3>

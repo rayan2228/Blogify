@@ -12,9 +12,9 @@ const SingleComment = ({ commentInfo }) => {
       <Link to={`/profile/${commentInfo?.author?.id}`}>
         {commentInfo?.author?.avatar ? (
           <Img
-            src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
-              profile?.user?.id ?? auth?.user?.id === commentInfo?.author?.id
-                ? profile?.user?.avatar
+            src={`${import.meta.env.VITE_IMAGE_BASEURL}avatar/${
+              auth?.user?.id === commentInfo?.author?.id
+                ? profile?.user?.avatar || auth?.user?.avatar
                 : commentInfo?.author?.avatar
             }`}
             className={"rounded-full w-8 h-8 object-cover"}
@@ -22,8 +22,8 @@ const SingleComment = ({ commentInfo }) => {
         ) : auth?.user?.avatar || profile?.user?.avatar ? (
           <Img
             src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
-              profile?.user?.id ?? auth?.user?.id === commentInfo?.author?.id
-                ? profile?.user?.avatar
+              auth?.user?.id === commentInfo?.author?.id
+                ? profile?.user?.avatar || auth?.user?.avatar
                 : commentInfo?.author?.avatar
             }`}
             className={"rounded-full w-8 h-8 object-cover"}

@@ -70,13 +70,15 @@ const SingleBlog = () => {
             {state?.blog?.likes?.length} Likes
           </span>
         </div>
-        <Img
-          className="object-cover w-full mx-auto md:w-8/12 h-80 md:h-96"
-          src={`${import.meta.env.VITE_IMAGE_BASEURL}/blog/${
-            state?.blog?.thumbnail
-          }`}
-          alt={state?.blog?.thumbnail}
-        />
+        {state?.blog?.thumbnail && (
+          <Img
+            className="object-cover w-full mx-auto md:w-8/12 h-80 md:h-96"
+            src={`${import.meta.env.VITE_IMAGE_BASEURL}/blog/${
+              state?.blog?.thumbnail
+            }`}
+            alt={state?.blog?.thumbnail}
+          />
+        )}
         {/* Tags */}
         <ul className="tags">
           {state?.blog?.tags?.split(",").map((tag) => (

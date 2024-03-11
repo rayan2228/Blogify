@@ -209,7 +209,7 @@
       "email": "rhrayan2228@gmail.com",
       "firstName": "Rayan",
       "lastName": "Hossain",
-      "avatar": "avatar-1710139804985-255424045.jpg",
+      "avatar": "avatar-1710177800388-407029334.png",
       "bio": "",
       "password": "$2b$08$aWb/.rEuZ/OqZpXbNl7YX.1nU4F2BHfNKHTJNoi0IzKMTfWdthTze",
       "favourites": [
@@ -222,6 +222,11 @@
           "id": "4321b782f360f58c8c88",
           "title": "JSON Parse | Android | Java",
           "tags": "android, java, kotlin, permission"
+        },
+        {
+          "id": "fb291905936e3e0ee6fe",
+          "title": "Anim incidunt esse",
+          "tags": "Officia a modi numqu"
         }
       ]
     },
@@ -622,6 +627,26 @@
       "createdAt": "2024-02-24T16:57:39.425Z"
     },
     {
+      "id": "fb291905936e3e0ee6fe",
+      "title": "Anim incidunt esse",
+      "content": "Est perferendis expe",
+      "thumbnail": "thumbnail-1710179628623-834030557.png",
+      "author": {
+        "id": "fc3fbb79e4698bd8015b",
+        "firstName": "Rayan",
+        "lastName": "Hossain",
+        "avatar": "avatar-1710177800388-407029334.png"
+      },
+      "tags": "Officia a modi numqu",
+      "likes": [
+        {
+          "id": "fc3fbb79e4698bd8015b"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-03-11T17:53:48.629Z"
+    },
+    {
       "id": "6c33b31ecaa2b8917db2",
       "title": "লিনিয়ার সার্চ । ডেটা স্ট্রাকচার ও এলগোরিদম",
       "content": "গত ৫-৬ বছর থেকে Android, Fontend, Backend, Web Security ইত্যাদি নিয়ে কাজ করতে করতে একটা সময় মনে হলো, কোনো একটা জিনিস শেখা বাদ পরে গেছে। একটু কিছু চিন্তার পর বুঝতে পারলাম প্রোগ্রামিং এর সব থেকে important জিনিসটাই শেখা হয় নাই। আর তা হলো “ Data Structure & Algorithm ” । এটির গুরুত্ব নিয়ে বলার কিছু নাই।\n\nতাই Quarantine এর শেষের দিকে মাইন্ড সেটআপ করলাম,সব কিছু বাদ দিয়ে DS & Algo তেই ফোকাস করবো। তাই Android Studio কে লাল সালাম দিয়ে শেখা শুরু করলাম । এখন যখন আমি এই পোস্টটি লিখছি, তখনো আমি Data Structure & Algorithm এ খুব ভালো না, বলতে গেলে পারিই না। একদম বাচ্চা আমি। তবে এই পোস্ট টি মূলত আমি নিজের জন্যেই লিখছি, যেন ভবিষ্যতে যদি কখনো দরকার পরে বা কিছু ভূলে যাই তখবে নিজের লেখা জার্নাল দেখে আবার মনে করে নিতে পারি। (তবে এই পোষ্ট গুলো অবশ্যই পাবলিক থাকবে যেন অন্য কেউ যদি চায়, এগুলো follow করতে পারে )তাই এই পোষ্ট কিংবা এর পরবর্তীতে Data Structure & Algorithm নিয়ে পোষ্ট গুলো তে ভূল থাকা স্বাভাবিক। ভুলত্রুটি গুলো দেখিয়ে দেবার অনুরোধ রইলো।\n\nলিনিয়ার সার্চ এলগোরিদম\n\nএই অনেক অনেক সার্চিং এলগোরিদমের মধ্যে লিনিয়ার সার্চ সব থেকে সহজ একটি এলগোরিদম। ধরুন আপনি একটি বই এর তাক থেকে কোনো একটি নিদৃষ্ট বই খুজবেন অথবা তো আমি চাইলে এক এক করে খুজে বের করতে পারেন অথবা randomly ও খুজতে পারেন। লিনিয়ার সার্চের ক্ষেত্রে আমরা নিদির্ষ্ট বইটি এক এক করে খুজবো।\nঅর্থাৎ বই এর তাকের প্রথম থেকে খোজা শুরু করবো, প্রথম বইটি দেখবো। সেটা কি আমাদের কাংখিত বই ? যদি বইটি আমরা পেয়ে যাই তবে খোজা বাদ দিবো আর না পেলে খুজতেই থাকবো যতক্ষন পর্যন্ত আমরা আমাদের কাংখিত বই টি না পাচ্ছি ।\n\n\nআচ্ছা ধরুন, একটি Array আছে যার মধ্যে ৫,১২,১৮,২০,২৬ এই ৫টি Int ভ্যালু আছে। এখন আমাদের খুজতে হবে ২০ ভ্যালু টি array এর কোন পজিশন/index এ আছে।\n\nতবে ২০ এর ইনডেক্স খোজার জন্য আমরা নিচের ধাপ গুলো ফলো করতে পারি\n\nধাপ-১ঃ ধরি লিস্টে n সংখ্যক উপাদান আছে।\n\nধাপ-২ঃ এখন আমরা i এর মান ০ নেই এবং i এর মান (n-1) পর্যন্ত বাড়াতে থাকবো। প্রতিটি মানের জন্যে ধাপ-৩ এ যাই।\n\nধাপ-৩ঃ i এর মান array এর পজিশন/ইনডেক্স হিসেবে চিন্তা করি এবং array[i] এর ভ্যালু আমাদের কাংক্ষিত ভ্যালুর সাথে মিলে কিনা তা চেক করে দেখি। যদি মিলে যায় তবে ধাপঃ৪ এ যাই নাহলে আবার ধাপঃ২ এ যাই।\n\nধাপ-৪ঃ i এর ভ্যালু return করি এবং প্রোগ্রাম বন্ধ করি ।",
@@ -668,6 +693,56 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-02-24T17:06:43.629Z"
+    },
+    {
+      "id": "17fa6fc27595824bc95d",
+      "title": "Qui ipsam tempor tem",
+      "content": "Aut cumque do a nequ",
+      "thumbnail": "thumbnail-1710179165039-692929734.png",
+      "author": {
+        "id": "fc3fbb79e4698bd8015b",
+        "firstName": "Rayan",
+        "lastName": "Hossain",
+        "avatar": "avatar-1710177800388-407029334.png"
+      },
+      "tags": "Doloribus tenetur ip",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-11T17:46:05.047Z",
+      "isFavourite": false
+    },
+    {
+      "id": "ef94ee51e805b4def462",
+      "title": "Qui qui quis soluta ",
+      "content": "Ut atque modi debiti",
+      "thumbnail": null,
+      "author": {
+        "id": "fc3fbb79e4698bd8015b",
+        "firstName": "Rayan",
+        "lastName": "Hossain",
+        "avatar": "avatar-1710177800388-407029334.png"
+      },
+      "tags": "Dolore adipisicing m",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-11T17:51:22.794Z",
+      "isFavourite": false
+    },
+    {
+      "id": "5a19bf87149683d4571a",
+      "title": "Commodo deserunt sed",
+      "content": "Et ex ut aspernatur ",
+      "thumbnail": null,
+      "author": {
+        "id": "fc3fbb79e4698bd8015b",
+        "firstName": "Rayan",
+        "lastName": "Hossain",
+        "avatar": "avatar-1710177800388-407029334.png"
+      },
+      "tags": "Quia iste qui magnam",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-11T17:56:28.889Z"
     }
   ]
 }

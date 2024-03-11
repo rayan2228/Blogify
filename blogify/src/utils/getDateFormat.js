@@ -8,25 +8,25 @@ const getDateFormat = (fromDate) => {
     let message
 
     if (hourDiff > 0 && hourDiff < 24) {
-        message = `${hourDiff}h`
-    } else if (hourDiff <= 24) {
-        message = '1d'
-    } else if (hourDiff <= 48) {
-        message = '2d'
-    } else if (hourDiff <= 72) {
-        message = '3d'
-    } else if (hourDiff <= 96) {
-        message = '4d'
-    } else if (hourDiff <= 120) {
-        message = '5d'
-    } else {
+        message = `${hourDiff}h ago`
+    } else if (hourDiff > 0 && hourDiff <= 24) {
+        message = '1d ago'
+    } else if (hourDiff > 0 && hourDiff <= 48) {
+        message = '2d ago'
+    } else if (hourDiff > 0 && hourDiff <= 72) {
+        message = '3d ago'
+    } else if (hourDiff > 0 && hourDiff <= 96) {
+        message = '4d ago'
+    } else if (hourDiff > 0 && hourDiff <= 120) {
+        message = '5d ago'
+    } else if (hourDiff > 0 && hourDiff > 120) {
         message = new Date(fromDate).toLocaleDateString('en-us', { year: "numeric", month: "short", day: "numeric" })
     }
     if (minDiff > 0 && hourDiff < 24) {
-        message = message ? `${message} ${minDiff}minutes` : `${minDiff}minutes`
+        message = message ? `${message} ${minDiff}minutes ago` : `${minDiff}minutes ago`
     }
-    if (diff && hourDiff < 24) {
-        message = message ? `${message} ${Math.round(diff)}seconds` : `${Math.round(diff)}seconds`
+    if (diff && hourDiff < 24 && minDiff < 10) {
+        message = message ? `${message} ${Math.round(diff)}seconds ` : `${Math.round(diff)}seconds ago`
     }
     return message
 }
