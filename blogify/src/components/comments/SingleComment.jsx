@@ -7,13 +7,23 @@ import useAuth from "../../hooks/useAuth";
 const SingleComment = ({ commentInfo }) => {
   const { state: profile } = useProfile();
   const { auth } = useAuth();
+  console.log("asd", commentInfo);
   return (
     <div className="flex items-start my-8 space-x-4">
       <Link to={`/profile/${commentInfo?.author?.id}`}>
         {commentInfo?.author?.avatar ? (
           <Img
             src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
-              profile?.user?.id === commentInfo?.author?.id
+              profile?.user?.id ?? auth?.user?.id === commentInfo?.author?.id
+                ? profile?.user?.avatar
+                : commentInfo?.author?.avatar
+            }`}
+            className={"rounded-full w-8 h-8 object-cover"}
+          />
+        ) : auth?.user?.avatar || profile?.user?.avatar ? (
+          <Img
+            src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
+              profile?.user?.id ?? auth?.user?.id === commentInfo?.author?.id
                 ? profile?.user?.avatar
                 : commentInfo?.author?.avatar
             }`}

@@ -203,6 +203,26 @@
           "tags": "android, java, kotlin, permission"
         }
       ]
+    },
+    {
+      "id": "fc3fbb79e4698bd8015b",
+      "email": "rhrayan2228@gmail.com",
+      "firstName": "Rayan",
+      "lastName": "Hossain",
+      "avatar": "avatar-1710139804985-255424045.jpg",
+      "bio": "",
+      "password": "$2b$08$aWb/.rEuZ/OqZpXbNl7YX.1nU4F2BHfNKHTJNoi0IzKMTfWdthTze",
+      "favourites": []
+    },
+    {
+      "id": "ae8deb986c47a26d34da",
+      "email": "qufocataqa@mailinator.com",
+      "firstName": "Abbot",
+      "lastName": "Crosby",
+      "avatar": "avatar-1710140425636-524176166.png",
+      "bio": "",
+      "password": "$2b$08$iiQVdjItwYdTJhlUrMd5..GbGkDwxPDlbzmWqt/ABh0hAe7RD3Fcu",
+      "favourites": []
     }
   ],
   "blogs": [
@@ -371,9 +391,20 @@
             "lastName": "Hunter",
             "avatar": null
           }
+        },
+        {
+          "id": "84756eeef3f96d8957d5",
+          "content": "aaaaa",
+          "author": {
+            "id": "ae8deb986c47a26d34da",
+            "firstName": "Abbot",
+            "lastName": "Crosby",
+            "avatar": null
+          }
         }
       ],
-      "createdAt": "2024-02-24T09:09:01.121Z"
+      "createdAt": "2024-02-24T09:09:01.121Z",
+      "isFavourite": false
     },
     {
       "id": "4321b782f360f58c8c86",
@@ -441,6 +472,30 @@
         },
         {
           "id": "2ce948124ef474ee5e4f"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-02-24T09:01:37.581Z",
+      "isFavourite": false
+    },
+    {
+      "id": "4321b782f360f58c8c89",
+      "title": "React useMemo Hook",
+      "content": "useMemo is used to memoize the result of a function, meaning it caches the result and returns it when the inputs to that function haven't changed since the last render. It takes two arguments: the function to memoize and an array of dependencies. If any of the dependencies change between renders, the memoized function is re-executed; otherwise, the cached result is returned.",
+      "thumbnail": "thumbnail-4321b782f360f58c8c89.avif",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "android, java, kotlin, permission",
+      "likes": [
+        {
+          "id": "346d7a36b3c41f3fbfa2"
+        },
+        {
+          "id": "52d88a1841cf076fbf84"
         }
       ],
       "comments": [],
@@ -516,33 +571,51 @@
           "id": "346d7a36b3c41f3fbfa2"
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "id": "7d59153ffe308be47c35",
+          "content": "sdsa",
+          "author": {
+            "id": "fc3fbb79e4698bd8015b",
+            "firstName": "Rayan",
+            "lastName": "Hossain",
+            "avatar": null
+          }
+        }
+      ],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
     },
     {
-      "id": "4321b782f360f58c8c89",
-      "title": "React useMemo Hook",
-      "content": "useMemo is used to memoize the result of a function, meaning it caches the result and returns it when the inputs to that function haven't changed since the last render. It takes two arguments: the function to memoize and an array of dependencies. If any of the dependencies change between renders, the memoized function is re-executed; otherwise, the cached result is returned.",
-      "thumbnail": "thumbnail-4321b782f360f58c8c89.avif",
+      "id": "9d5598ab44600a379103",
+      "title": "Dev Retro 2022: What made me a better developer this year?",
+      "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
+      "thumbnail": "thumbnail-1708793859418-241650391.png",
       "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
+        "id": "346d7a36b3c41f3fbfa2",
+        "firstName": "Tapas",
+        "lastName": "Adhikary",
+        "avatar": "avatar-1708764766479-243448656.png"
       },
-      "tags": "android, java, kotlin, permission",
+      "tags": "programming, algorithm, prototype, javascript",
       "likes": [
         {
-          "id": "346d7a36b3c41f3fbfa2"
-        },
-        {
-          "id": "52d88a1841cf076fbf84"
+          "id": "fc3fbb79e4698bd8015b"
         }
       ],
-      "comments": [],
-      "createdAt": "2024-02-24T09:01:37.581Z",
-      "isFavourite": false
+      "comments": [
+        {
+          "id": "3cf24a52d14f91cdac47",
+          "content": "sdad",
+          "author": {
+            "id": "fc3fbb79e4698bd8015b",
+            "firstName": "Rayan",
+            "lastName": "Hossain",
+            "avatar": "avatar-1710139804985-255424045.jpg"
+          }
+        }
+      ],
+      "createdAt": "2024-02-24T16:57:39.425Z"
     },
     {
       "id": "6c33b31ecaa2b8917db2",
@@ -559,22 +632,6 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-02-24T09:04:21.871Z"
-    },
-    {
-      "id": "9d5598ab44600a379103",
-      "title": "Dev Retro 2022: What made me a better developer this year?",
-      "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
-      "thumbnail": "thumbnail-1708793859418-241650391.png",
-      "author": {
-        "id": "346d7a36b3c41f3fbfa2",
-        "firstName": "Tapas",
-        "lastName": "Adhikary",
-        "avatar": "avatar-1708764766479-243448656.png"
-      },
-      "tags": "programming, algorithm, prototype, javascript",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-02-24T16:57:39.425Z"
     },
     {
       "id": "965584a7b281d9f99c14",

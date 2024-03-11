@@ -22,7 +22,6 @@ const SingleBlog = () => {
       try {
         const res = await api.get(`/blogs/${blogId}`);
         if (res.status === 200) {
-          console.log(res);
           dispatch({ type: actions.blogs.singleDataFetched, data: res?.data });
           setComments(res.data.comments);
         }
