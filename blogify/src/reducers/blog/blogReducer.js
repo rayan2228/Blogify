@@ -1,7 +1,7 @@
 import actions from "../actions"
 
 const initialState = {
-    blogs: [],
+    blogs: null,
     blog: null,
     popularBlogs: null,
     favouriteBlogs: null,
@@ -25,7 +25,7 @@ const blogReducer = (state, action) => {
                 ...state,
                 loading: false,
                 error: false,
-                blogs: [...state.blogs, ...action.data],
+                blogs: state?.blogs ? [...state.blogs, ...action.data] : action.data,
             }
         }
         case actions.blogs.dataFetchedError: {

@@ -22,6 +22,7 @@ const BlogsContainer = () => {
           setPage((prevPage) => prevPage + 1);
         }
       } catch (error) {
+        console.log(error);
         dispatch({
           type: actions.blogs.dataFetchedError,
           error: error,
@@ -50,21 +51,26 @@ const BlogsContainer = () => {
       <BlogList key={blog.id} blog={blog} />
     ));
   }
-  if (state?.blogs?.length === 0) {
-    <NotFound message={"no blog found"} />;
+  if (state?.blogs?.length < 1) {
+    content = <NotFound message={"no blog found"} />;
   }
   if (state?.error) {
-    <NotFound message={`an error occurred ${state?.error.message}`} />;
+    content = (
+      <NotFound message={`an error occurred ${state?.error.message}`} />
+    );
   }
   return (
     <div className="space-y-3 md:col-span-5">
       {content}
-      {hasMore ? (
+      {hasMore && !state?.error ? (
         <Loading ref={loadingRef} />
       ) : (
-        <div className="p-2 text-lg text-center text-white bg-slate-900">
-          all blogs are loaded
-        </div>
+        !state?.error &&
+        state?.blogs?.length !== 0 && (
+          <div className="p-2 text-lg text-center text-white bg-slate-900">
+            all blogs are loaded
+          </div>
+        )
       )}
     </div>
   );

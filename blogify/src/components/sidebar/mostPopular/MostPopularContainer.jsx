@@ -34,8 +34,8 @@ const MostPopularContainer = () => {
       <MostPopularBlogList key={popularBlog.id} popularBlog={popularBlog} />
     ));
   }
-  if (state?.blogs?.length === 0) {
-    <NotFound message={"no popular blog found"} />;
+  if (state?.popularBlogs?.length === 0) {
+    content = <NotFound message={"no popular blog found"} />;
   }
   if (state?.error) {
     content = (

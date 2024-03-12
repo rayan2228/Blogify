@@ -28,7 +28,7 @@ const getDateFormat = (fromDate) => {
     if (diff && hourDiff < 24 && minDiff < 10) {
         message = message ? `${message} ${Math.round(diff)}seconds ` : `${Math.round(diff)}seconds ago`
     }
-    return message
+    return `${message} ago`
 }
 
 export default getDateFormat
