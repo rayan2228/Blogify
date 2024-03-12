@@ -29,7 +29,7 @@ const MostPopularContainer = () => {
   if (state?.loading) {
     content = <Loading />;
   }
-  if (state?.popularBlogs?.length) {
+  if (state?.popularBlogs?.length > 0) {
     content = state?.popularBlogs?.map((popularBlog) => (
       <MostPopularBlogList key={popularBlog.id} popularBlog={popularBlog} />
     ));
