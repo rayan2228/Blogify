@@ -63,8 +63,9 @@ const BlogList = ({ blog }) => {
           </div>
         </div>
         {/* action dot */}
-        {auth?.user?.id === blog.author?.id && <BlogActions />}
-
+        {auth?.user?.id === blog.author?.id && (
+          <BlogActions blogDetails={blog} />
+        )}
         {/* action dot ends */}
       </div>
     </div>

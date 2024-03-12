@@ -3,8 +3,10 @@ import editIcon from "../../assets/icons/edit.svg";
 import deleteIcon from "../../assets/icons/delete.svg";
 import { useState } from "react";
 import Img from "../layouts/Img";
-const BlogActions = () => {
+import { useNavigate } from "react-router-dom";
+const BlogActions = ({ blogDetails }) => {
   const [showBlogActions, setShowBlogActions] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="absolute top-0 right-0">
       <button onClick={() => setShowBlogActions(!showBlogActions)}>
@@ -13,7 +15,10 @@ const BlogActions = () => {
       {/* Action Menus Popup */}
       {showBlogActions && (
         <div className="action-modal-container">
-          <button className="action-menu-item hover:text-lwsGreen">
+          <button
+            className="action-menu-item hover:text-lwsGreen"
+            onClick={() => navigate("/blog-write", { state: { blogDetails } })}
+          >
             <Img src={editIcon} alt="Edit" />
             Edit
           </button>

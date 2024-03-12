@@ -3,8 +3,11 @@ import InputField from "../components/layouts/InputField";
 import { useState } from "react";
 import Img from "../components/layouts/Img";
 import useAxios from "../hooks/useAxios";
+import { useLocation } from "react-router-dom";
 
 const BlogWrite = () => {
+  const { state } = useLocation();
+  const [blog, setBlog] = useState(state?.blogDetails || null);
   const [preview, setPreview] = useState(null);
   const { api } = useAxios();
   const {
@@ -22,10 +25,17 @@ const BlogWrite = () => {
       createFormData.append("thumbnail", formData?.thumbnail[0]);
     }
     try {
-      let res = await api.post("/blogs", createFormData);
+      let res;
+      if (blog) {
+        res = await api.patch(`/blogs/${blog?.id}`, createFormData);
+      } else {
+        res = await api.post("/blogs", createFormData);
+      }
       if (res.status === 201) {
         reset();
         console.log("ok");
+      } else if (res.status === 200) {
+        setBlog(res?.data);
       }
     } catch (error) {
       console.log(error);
@@ -37,7 +47,7 @@ const BlogWrite = () => {
         <div className="container">
           {/* Form Input field for creating Blog Post */}
           <form onSubmit={handleSubmit(formSubmit)} className="createBlog">
-            {preview && (
+            {preview ? (
               <div className="w-full border border-indigo-500 h-80 bg-slate-600/20">
                 <Img
                   src={preview}
@@ -45,6 +55,18 @@ const BlogWrite = () => {
                   className={"w-full h-full object-contain"}
                 />
               </div>
+            ) : (
+              blog?.thumbnail && (
+                <div className="w-full border border-indigo-500 h-80 bg-slate-600/20">
+                  <Img
+                    src={`${import.meta.env.VITE_IMAGE_BASEURL}blog/${
+                      blog?.thumbnail
+                    }`}
+                    alt={preview}
+                    className={"w-full h-full object-contain"}
+                  />
+                </div>
+              )
             )}
             <InputField className={"mb-6"} error={errors.thumbnail}>
               <div className="grid place-items-center bg-slate-600/20 h-[150px] rounded-md my-4">
@@ -84,6 +106,7 @@ const BlogWrite = () => {
                 id="title"
                 name="title"
                 placeholder="Enter your blog title"
+                defaultValue={blog?.title || ""}
               />
             </InputField>
             <InputField className={"mb-6"} error={errors.tags}>
@@ -93,6 +116,7 @@ const BlogWrite = () => {
                 id="tags"
                 name="tags"
                 placeholder="Your Comma Separated Tags Ex. JavaScript, React, Node, Express,"
+                defaultValue={blog?.tags || ""}
               />
             </InputField>
             <InputField className={"mb-6"} error={errors.content}>
@@ -102,7 +126,7 @@ const BlogWrite = () => {
                 name="content"
                 placeholder="Write your blog content"
                 rows={8}
-                defaultValue={""}
+                defaultValue={blog?.content || ""}
               />
             </InputField>
             <div className="mb-6"></div>
