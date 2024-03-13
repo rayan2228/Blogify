@@ -10,11 +10,13 @@ const SearchResult = ({ blog, onClose }) => {
         navigate(`/single-blog/${blog?.id}`), onClose();
       }}
     >
-      <Img
-        className="object-contain h-28"
-        src={`${import.meta.env.VITE_IMAGE_BASEURL}/blog/${blog?.thumbnail}`}
-        alt={blog?.title}
-      />
+      {blog?.thumbnail && (
+        <Img
+          className="object-contain h-28"
+          src={`${import.meta.env.VITE_IMAGE_BASEURL}/blog/${blog?.thumbnail}`}
+          alt={blog?.title}
+        />
+      )}
       <div className="mt-2">
         <h3 className="text-xl font-bold text-slate-300">{blog?.title}</h3>
         {/* Meta Informations */}

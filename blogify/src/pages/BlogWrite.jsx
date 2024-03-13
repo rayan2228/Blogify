@@ -32,8 +32,8 @@ const BlogWrite = () => {
         res = await api.post("/blogs", createFormData);
       }
       if (res.status === 201) {
+        setPreview(null);
         reset();
-        console.log("ok");
       } else if (res.status === 200) {
         setBlog(res?.data);
       }

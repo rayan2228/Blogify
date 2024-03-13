@@ -4,7 +4,8 @@ const actions = {
         dataFetched: "profileDataFetched",
         dataFetchedError: "profileDataFetchedError",
         profileDataEdit: "profileDataEdit",
-        profileImageUpload: "profileImageUpload"
+        profileImageUpload: "profileImageUpload",
+        deleteBlog: "deleteBlog"
     },
     blogs: {
         dataFetching: "blogDataFetching",
@@ -13,7 +14,8 @@ const actions = {
         singleDataFetched: "singleDataFetched",
         popularDataFetched: "popularDataFetched",
         favouriteDataFetched: "favouriteDataFetched",
-        searchedBlogsDataFetched: "searchedBlogsDataFetched"
+        searchedBlogsDataFetched: "searchedBlogsDataFetched",
+        deleteBlog: "deleteBlog"
     }
 }
 

@@ -6,7 +6,12 @@ import Img from "../layouts/Img";
 import { useNavigate } from "react-router-dom";
 import DeleteConfirmationModal from "../../modal/DeleteConfirmationModal";
 import useAxios from "../../hooks/useAxios";
+import useBlogs from "../../hooks/useBlogs";
+import actions from "../../reducers/actions";
+import useProfile from "../../hooks/useProfile";
 const BlogActions = ({ blogDetails }) => {
+  const { dispatch } = useBlogs();
+  const { dispatch: dispatchProfile } = useProfile();
   const [showBlogActions, setShowBlogActions] = useState(false);
   const navigate = useNavigate();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -15,6 +20,8 @@ const BlogActions = ({ blogDetails }) => {
     try {
       const res = await api.delete(`/blogs/${Id}`);
       if (res.status === 200) {
+        dispatch({ type: actions.blogs.deleteBlog, data: Id });
+        dispatchProfile({ type: actions.profile.deleteBlog, data: Id });
         setShowDeleteModal(false);
       }
     } catch (error) {

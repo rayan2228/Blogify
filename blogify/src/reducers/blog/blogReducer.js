@@ -24,7 +24,7 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                error: false,
+                error: null,
                 blogs: state?.blogs ? [...state.blogs, ...action.data] : action.data,
             }
         }
@@ -44,7 +44,7 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                error: false,
+                error: null,
                 blog: action.data,
             }
         }
@@ -52,7 +52,7 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                error: false,
+                error: null,
                 popularBlogs: action.data,
             }
         }
@@ -60,7 +60,7 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                error: false,
+                error: null,
                 favouriteBlogs: action.data,
             }
         }
@@ -68,8 +68,16 @@ const blogReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
-                error: false,
+                error: null,
                 searchedBlogs: action.data
+            }
+        }
+        case actions.blogs.deleteBlog: {
+            return {
+                ...state,
+                loading: false,
+                error: null,
+                blogs: state?.blogs?.filter((blogs) => blogs.id !== action.data)
             }
         }
         default: {

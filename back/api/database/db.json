@@ -253,7 +253,6 @@
         "lastName": "Saha",
         "avatar": "avatar-1708764729322-387087910.png"
       },
-      "tags": "programming, algorithm, prototype, javascript",
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
@@ -275,138 +274,6 @@
         },
         {
           "id": "2ce948124ef474ee5e4f"
-        }
-      ],
-      "comments": [
-        {
-          "id": "83fbf83e7a33ca0ac1ea",
-          "content": "অনেক সুন্দর হয়েছে",
-          "author": {
-            "id": "346d7a36b3c41f3fbfa2",
-            "firstName": "Tapas",
-            "lastName": "Adhikary",
-            "avatar": "avatar-1708764766479-243448656.png"
-          }
-        },
-        {
-          "id": "a6cb6149982d6641fdcf",
-          "content": "Thank you for this wonderful video. Learning JS for last 1 year and this 'new' key word was giving me headache. I was searching for a better explanation for last one month. Even though I have found some, nothing beats learning in mother tongue. Great job.",
-          "author": {
-            "id": "f810ae24754a6cdc6d01",
-            "firstName": "Akash",
-            "lastName": "Ahmed",
-            "avatar": "avatar-1708764802524-290642702.png"
-          }
-        },
-        {
-          "id": "48554b3ebbc9a9a5187c",
-          "content": "আমি JavaScript এর অনেক  টিউটোরিয়াল দেখেছি অন্যান্য ভাইয়াদের channel থেকে। আমার মনে হয়, কিছু কিছু ভাইদের উদ্দেশ্য হয়তো বিগিনারদের ভীতু করা, ভাগিয়ে দেওয়া যে সহজ বিষয় কঠিন করে বুঝানো। আমি আপনার মধ্যে সেটা একদমই দেখি না। সত্যিকার অর্থে- আপনি একজন বিগিনারবান্ধব।। অসংখ্য ধন্যবাদ ভাইয়া আপনাকে।",
-          "author": {
-            "id": "3d2dde4b6548275fb066",
-            "firstName": "Saad",
-            "lastName": "Hasan",
-            "avatar": "avatar-1708764856675-623317122.jpg"
-          }
-        },
-        {
-          "id": "fe809ab30646ffd995c1",
-          "content": "asdsad",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709965587521-50983329.png"
-          }
-        },
-        {
-          "id": "33e8bcd55e722d6a1a94",
-          "content": "asdsad",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709965587521-50983329.png"
-          }
-        },
-        {
-          "id": "2c858b28e8a29ffafee1",
-          "content": "fsdf",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709965587521-50983329.png"
-          }
-        },
-        {
-          "id": "faf1a93d57e888f4225e",
-          "content": "asdas",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709965587521-50983329.png"
-          }
-        },
-        {
-          "id": "9e9d23db25654101abec",
-          "content": "asdas",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709965587521-50983329.png"
-          }
-        },
-        {
-          "id": "b0bf5e9e719ac8b3022c",
-          "content": "asdas",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709965587521-50983329.png"
-          }
-        },
-        {
-          "id": "041af0d5cbc4aff905f2",
-          "content": "asas",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709981947636-393857396.png"
-          }
-        },
-        {
-          "id": "d1ff1f388b161d3c0e92",
-          "content": "asa",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709981947636-393857396.png"
-          }
-        },
-        {
-          "id": "19fcb8da22c8fcb55d7c",
-          "content": "asdasd",
-          "author": {
-            "id": "dcb26bc440f49e128a20",
-            "firstName": "Yoshi",
-            "lastName": "Powell",
-            "avatar": "avatar-1709813207078-254417079.jpg"
-          }
-        },
-        {
-          "id": "ff148a262f7f84306290",
-          "content": "y",
-          "author": {
-            "id": "52d88a1841cf076fbf84",
-            "firstName": "Dawn",
-            "lastName": "Hunter",
-            "avatar": null
-          }
         }
       ],
       "createdAt": "2024-02-24T09:09:01.121Z",
@@ -471,7 +338,6 @@
         "lastName": "Hasan",
         "avatar": "avatar-1708764856675-623317122.jpg"
       },
-      "tags": "android, java, kotlin, permission",
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
@@ -483,7 +349,6 @@
           "id": "fc3fbb79e4698bd8015b"
         }
       ],
-      "comments": [],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": true
     },
@@ -498,7 +363,6 @@
         "lastName": "Hasan",
         "avatar": "avatar-1708764856675-623317122.jpg"
       },
-      "tags": "android, java, kotlin, permission",
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
@@ -507,7 +371,6 @@
           "id": "52d88a1841cf076fbf84"
         }
       ],
-      "comments": [],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
     },
@@ -522,42 +385,9 @@
         "lastName": "Hasan",
         "avatar": "avatar-1708764856675-623317122.jpg"
       },
-      "tags": "JavaScript, Async, Scope",
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
-        }
-      ],
-      "comments": [
-        {
-          "id": "19becccf4ebf3e6cf385",
-          "content": "অনেক সুন্দর হয়েছে",
-          "author": {
-            "id": "346d7a36b3c41f3fbfa2",
-            "firstName": "Tapas",
-            "lastName": "Adhikary",
-            "avatar": "avatar-1708764766479-243448656.png"
-          }
-        },
-        {
-          "id": "b4d67cf6a4311d87047b",
-          "content": "zxzx",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709965587521-50983329.png"
-          }
-        },
-        {
-          "id": "5cfb3d1096371e990097",
-          "content": "sd",
-          "author": {
-            "id": "a8f6179c31f356356347",
-            "firstName": "Blaine",
-            "lastName": "Bernard",
-            "avatar": "avatar-1709965587521-50983329.png"
-          }
         }
       ],
       "createdAt": "2024-02-24T09:01:37.581Z",
@@ -574,22 +404,9 @@
         "lastName": "Hasan",
         "avatar": "avatar-1708764856675-623317122.jpg"
       },
-      "tags": "android, java, kotlin, permission",
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
-        }
-      ],
-      "comments": [
-        {
-          "id": "7d59153ffe308be47c35",
-          "content": "sdsa",
-          "author": {
-            "id": "fc3fbb79e4698bd8015b",
-            "firstName": "Rayan",
-            "lastName": "Hossain",
-            "avatar": null
-          }
         }
       ],
       "createdAt": "2024-02-24T09:01:37.581Z",
@@ -606,46 +423,12 @@
         "lastName": "Adhikary",
         "avatar": "avatar-1708764766479-243448656.png"
       },
-      "tags": "programming, algorithm, prototype, javascript",
       "likes": [
         {
           "id": "fc3fbb79e4698bd8015b"
-        }
-      ],
-      "comments": [
-        {
-          "id": "3cf24a52d14f91cdac47",
-          "content": "sdad",
-          "author": {
-            "id": "fc3fbb79e4698bd8015b",
-            "firstName": "Rayan",
-            "lastName": "Hossain",
-            "avatar": "avatar-1710139804985-255424045.jpg"
-          }
         }
       ],
       "createdAt": "2024-02-24T16:57:39.425Z"
-    },
-    {
-      "id": "a752ea0c05761001e53c",
-      "title": "Dolores ",
-      "content": "Laboriosam anim ani...",
-      "thumbnail": "thumbnail-1710265281340-119123423.png",
-      "author": {
-        "id": "fc3fbb79e4698bd8015b",
-        "firstName": "Rayan",
-        "lastName": "Hossain",
-        "avatar": "avatar-1710177800388-407029334.png"
-      },
-      "tags": "Iure ,numquam ,est, ess",
-      "likes": [
-        {
-          "id": "fc3fbb79e4698bd8015b"
-        }
-      ],
-      "comments": [],
-      "createdAt": "2024-03-12T17:32:58.231Z",
-      "isFavourite": false
     },
     {
       "id": "6c33b31ecaa2b8917db2",
@@ -674,9 +457,7 @@
         "lastName": "Adhikary",
         "avatar": "avatar-1708764766479-243448656.png"
       },
-      "tags": "programming, algorithm, prototype, javascript",
       "likes": [],
-      "comments": [],
       "createdAt": "2024-02-24T16:59:13.363Z"
     },
     {
@@ -690,27 +471,8 @@
         "lastName": "Saha",
         "avatar": "avatar-1708764729322-387087910.png"
       },
-      "tags": "programming, algorithm, prototype, javascript",
       "likes": [],
-      "comments": [],
       "createdAt": "2024-02-24T17:06:43.629Z"
-    },
-    {
-      "id": "ef94ee51e805b4def462",
-      "title": "Qui qui quis soluta ",
-      "content": "Ut atque modi debiti",
-      "thumbnail": null,
-      "author": {
-        "id": "fc3fbb79e4698bd8015b",
-        "firstName": "Rayan",
-        "lastName": "Hossain",
-        "avatar": "avatar-1710177800388-407029334.png"
-      },
-      "tags": "Dolore adipisicing m",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-11T17:51:22.794Z",
-      "isFavourite": false
     }
   ]
 }

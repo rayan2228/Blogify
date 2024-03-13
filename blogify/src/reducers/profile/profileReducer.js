@@ -13,13 +13,15 @@ const profileReducer = (state, action) => {
         case actions.profile.dataFetching: {
             return {
                 ...state,
-                loading: true
+                loading: true,
+                error: null
             }
         }
         case actions.profile.dataFetched: {
             return {
                 ...state,
                 loading: false,
+                error: null,
                 user: action.data,
                 blogs: action.data.blogs,
                 favourites: action.data.favourites,
@@ -39,6 +41,7 @@ const profileReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
+                error: null,
                 user: action.data,
             }
         }
@@ -46,7 +49,16 @@ const profileReducer = (state, action) => {
             return {
                 ...state,
                 loading: false,
+                error: null,
                 user: action.data,
+            }
+        }
+        case actions.profile.deleteBlog: {
+            return {
+                ...state,
+                loading: false,
+                error: null,
+                blogs: state?.blogs?.filter((blogs) => blogs.id !== action.data)
             }
         }
         default: {
