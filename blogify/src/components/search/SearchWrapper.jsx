@@ -1,4 +1,4 @@
-import { useReducer, useRef, useState } from "react";
+import { useReducer, useState } from "react";
 import SearchResult from "../search/SearchResult";
 import { blogReducer, initialState } from "../../reducers/blog/blogReducer";
 import actions from "../../reducers/actions";
@@ -7,9 +7,10 @@ import useDebounce from "../../hooks/useDebounce";
 import Loading from "../layouts/Loading";
 import { useEffect } from "react";
 import NotFound from "../layouts/NotFound";
+import useBlogs from "../../hooks/useBlogs";
 const SearchWrapper = ({ onClose }) => {
   const [searchTerms, setSearchTerms] = useState("");
-  const [state, dispatch] = useReducer(blogReducer, initialState);
+  const { state, dispatch } = useBlogs();
   const searchBlogs = async (searchTerms) => {
     let lowerCaseSearchTerms = searchTerms.toLowerCase();
     try {
@@ -35,6 +36,11 @@ const SearchWrapper = ({ onClose }) => {
       dispatch({ type: actions.blogs.dataFetching });
       handleSearch();
     }
+    return () =>
+      dispatch({
+        type: actions.blogs.searchedBlogsDataFetched,
+        data: null,
+      });
   }, [searchTerms]);
   let content;
   if (state?.loading) {

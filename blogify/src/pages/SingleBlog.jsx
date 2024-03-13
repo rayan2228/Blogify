@@ -2,9 +2,8 @@ import Container from "../components/layouts/Container";
 import Img from "../components/layouts/Img";
 import CommentsContainer from "../components/comments/CommentsContainer";
 import { Link, useParams } from "react-router-dom";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../api";
-import { blogReducer, initialState } from "../reducers/blog/blogReducer";
 import actions from "../reducers/actions";
 import Loading from "../components/layouts/Loading";
 import NotFound from "../components/layouts/NotFound";
@@ -12,9 +11,10 @@ import useProfile from "../hooks/useProfile";
 import SingleBlogActions from "../components/singleBlog/SingleBlogActions";
 import { CommentContext } from "../context";
 import getDateFormat from "../utils/getDateFormat";
+import useBlogs from "../hooks/useBlogs";
 const SingleBlog = () => {
   const { blogId } = useParams();
-  const [state, dispatch] = useReducer(blogReducer, initialState);
+  const { state, dispatch } = useBlogs();
   const { state: profile } = useProfile();
   const [comments, setComments] = useState({});
   useEffect(() => {

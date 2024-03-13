@@ -1,13 +1,13 @@
-import { useEffect, useReducer } from "react";
+import { useEffect } from "react";
 import MostPopularBlogList from "./MostPopularBlogList";
-import { blogReducer, initialState } from "../../../reducers/blog/blogReducer";
 import actions from "../../../reducers/actions";
 import api from "../../../api";
 import NotFound from "../../layouts/NotFound";
 import Loading from "../../layouts/Loading";
+import useBlogs from "../../../hooks/useBlogs";
 
 const MostPopularContainer = () => {
-  const [state, dispatch] = useReducer(blogReducer, initialState);
+  const { state, dispatch } = useBlogs();
   useEffect(() => {
     dispatch({ type: actions.blogs.dataFetching });
     const fetchPopularBlogs = async () => {
@@ -24,7 +24,7 @@ const MostPopularContainer = () => {
       }
     };
     fetchPopularBlogs();
-  }, []);
+  }, [dispatch]);
   let content;
   if (state?.loading) {
     content = <Loading />;
