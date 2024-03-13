@@ -4,11 +4,13 @@ import { useState } from "react";
 import Img from "../components/layouts/Img";
 import useAxios from "../hooks/useAxios";
 import { useLocation } from "react-router-dom";
-
+import Spinner from "../components/layouts/Spinner";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 const BlogWrite = () => {
   const { state } = useLocation();
   const [blog, setBlog] = useState(state?.blogDetails || null);
   const [preview, setPreview] = useState(null);
+  const [spinner, setSpinner] = useState(false);
   const { api } = useAxios();
   const {
     register,
@@ -25,6 +27,7 @@ const BlogWrite = () => {
       createFormData.append("thumbnail", formData?.thumbnail[0]);
     }
     try {
+      setSpinner(true);
       let res;
       if (blog) {
         res = await api.patch(`/blogs/${blog?.id}`, createFormData);
@@ -34,15 +37,40 @@ const BlogWrite = () => {
       if (res.status === 201) {
         setPreview(null);
         reset();
+        toast.success(res?.data?.message, {
+          position: "bottom-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       } else if (res.status === 200) {
         setBlog(res?.data);
+        toast.success("blog updated successfully", {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setSpinner(false);
     }
   };
   return (
     <main>
+      <ToastContainer />
       <section>
         <div className="container">
           {/* Form Input field for creating Blog Post */}
@@ -130,9 +158,15 @@ const BlogWrite = () => {
               />
             </InputField>
             <div className="mb-6"></div>
-            <button className="px-6 py-2 text-white transition-all duration-200 bg-indigo-600 rounded-md md:py-3 hover:bg-indigo-700">
-              Create Blog
-            </button>
+            {spinner ? (
+              <span className="px-6 py-2 text-white transition-all duration-200 bg-indigo-600 rounded-md md:py-3 hover:bg-indigo-700">
+                <Spinner />
+              </span>
+            ) : (
+              <button className="px-6 py-2 text-white transition-all duration-200 bg-indigo-600 rounded-md md:py-3 hover:bg-indigo-700">
+                {blog ? "Edit Blog" : "Create Blog"}
+              </button>
+            )}
           </form>
         </div>
       </section>
