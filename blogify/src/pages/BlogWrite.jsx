@@ -5,7 +5,7 @@ import Img from "../components/layouts/Img";
 import useAxios from "../hooks/useAxios";
 import { useLocation } from "react-router-dom";
 import Spinner from "../components/layouts/Spinner";
-import { ToastContainer, toast, Bounce } from "react-toastify";
+import { toast, Bounce } from "react-toastify";
 const BlogWrite = () => {
   const { state } = useLocation();
   const [blog, setBlog] = useState(state?.blogDetails || null);
@@ -70,7 +70,6 @@ const BlogWrite = () => {
   };
   return (
     <main>
-      <ToastContainer />
       <section>
         <div className="container">
           {/* Form Input field for creating Blog Post */}

@@ -9,6 +9,7 @@ import useAxios from "../../hooks/useAxios";
 import useBlogs from "../../hooks/useBlogs";
 import actions from "../../reducers/actions";
 import useProfile from "../../hooks/useProfile";
+import { toast, Bounce } from "react-toastify";
 const BlogActions = ({ blogDetails }) => {
   const { dispatch } = useBlogs();
   const { dispatch: dispatchProfile } = useProfile();
@@ -23,6 +24,17 @@ const BlogActions = ({ blogDetails }) => {
         dispatch({ type: actions.blogs.deleteBlog, data: Id });
         dispatchProfile({ type: actions.profile.deleteBlog, data: Id });
         setShowDeleteModal(false);
+        toast.success(res?.data?.message, {
+          position: "bottom-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     } catch (error) {
       console.log(error);
