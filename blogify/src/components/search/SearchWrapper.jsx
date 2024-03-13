@@ -1,6 +1,5 @@
-import { useReducer, useState } from "react";
+import { useState } from "react";
 import SearchResult from "../search/SearchResult";
-import { blogReducer, initialState } from "../../reducers/blog/blogReducer";
 import actions from "../../reducers/actions";
 import api from "../../api";
 import useDebounce from "../../hooks/useDebounce";
