@@ -1,12 +1,12 @@
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BlogList from "./BlogList";
-import { blogReducer, initialState } from "../../reducers/blog/blogReducer";
 import actions from "../../reducers/actions";
 import api from "../../api";
 import Loading from "../layouts/Loading";
 import NotFound from "../layouts/NotFound";
+import useBlogs from "../../hooks/useBlogs";
 const BlogsContainer = () => {
-  const [state, dispatch] = useReducer(blogReducer, initialState);
+  const { state, dispatch } = useBlogs();
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const loadingRef = useRef(null);

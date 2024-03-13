@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import YourFavouriteBlogList from "./YourFavouriteBlogList";
-import { useEffect, useReducer } from "react";
-import { blogReducer, initialState } from "../../../reducers/blog/blogReducer";
+import { useEffect } from "react";
 import actions from "../../../reducers/actions";
 import useAxios from "../../../hooks/useAxios";
 import NotFound from "../../layouts/NotFound";
 import Loading from "../../layouts/Loading";
+import useBlogs from "../../../hooks/useBlogs";
 
 const YourFavoritesContainer = () => {
   const { auth } = useAuth();
-  const [state, dispatch] = useReducer(blogReducer, initialState);
+  const { state, dispatch } = useBlogs();
   const { api } = useAxios();
   useEffect(() => {
     dispatch({ type: actions.blogs.dataFetching });
