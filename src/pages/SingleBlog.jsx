@@ -16,7 +16,6 @@ const SingleBlog = () => {
   const { blogId } = useParams();
   const { state, dispatch } = useBlogs();
   const { state: profile } = useProfile();
-  // const [comments, setComments] = useState([]);
   const { setComments } = useComment();
   useEffect(() => {
     const fetchSingleBlog = async () => {
