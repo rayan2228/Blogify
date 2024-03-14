@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import useProfile from "../../hooks/useProfile";
 import { useState } from "react";
 import SearchModal from "../../modal/SearchModal";
+import Logout from "./Logout";
 const Header = () => {
   const { auth } = useAuth();
   const { state } = useProfile();
@@ -78,12 +79,7 @@ const Header = () => {
               )}
               {auth.user ? (
                 <li>
-                  <Link
-                    to="/logout"
-                    className="px-6 py-2 text-white transition-all duration-200 bg-red-600 rounded-md md:py-3 hover:bg-red-700"
-                  >
-                    Logout
-                  </Link>
+                  <Logout />
                 </li>
               ) : (
                 <li>

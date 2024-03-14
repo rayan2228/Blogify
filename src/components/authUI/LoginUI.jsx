@@ -3,7 +3,10 @@ import { useForm } from "react-hook-form";
 import InputField from "../layouts/InputField";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
+import Spinner from "../layouts/Spinner";
 const LoginUI = ({ onSwap }) => {
+  const [spinner, seSpinner] = useState(false);
   const { pathname } = useLocation();
   const { setAuth } = useAuth();
   const navigate = useNavigate();
@@ -14,6 +17,7 @@ const LoginUI = ({ onSwap }) => {
     setError,
   } = useForm();
   const formSubmit = async (formData) => {
+    seSpinner(true);
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_API_BASEURL}auth/login`,
@@ -36,6 +40,8 @@ const LoginUI = ({ onSwap }) => {
         type: "random",
         message: error.response?.data?.error,
       });
+    } finally {
+      seSpinner(false);
     }
   };
   return (
@@ -110,12 +116,18 @@ const LoginUI = ({ onSwap }) => {
           />
         </InputField>
         <div className="mb-6">
-          <button
-            type="submit"
-            className="w-full p-3 text-white transition-all duration-200 bg-indigo-600 rounded-md hover:bg-indigo-700"
-          >
-            Login
-          </button>
+          {spinner ? (
+            <span className="block w-full p-3 text-center text-white transition-all duration-200 bg-indigo-600 rounded-md hover:bg-indigo-700">
+              <Spinner />
+            </span>
+          ) : (
+            <button
+              type="submit"
+              className="w-full p-3 text-white transition-all duration-200 bg-indigo-600 rounded-md hover:bg-indigo-700"
+            >
+              Login
+            </button>
+          )}
         </div>
         <p className="text-center">
           Don't have an account?{" "}

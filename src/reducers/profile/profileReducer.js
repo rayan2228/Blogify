@@ -65,6 +65,16 @@ const profileReducer = (state, action) => {
                 blogs: state?.blogs?.filter((blogs) => blogs.id !== action.data)
             }
         }
+        case actions.profile.logout: {
+            return {
+                ...state,
+                user: null,
+                blogs: [],
+                favourites: [],
+                loading: false,
+                error: null,
+            }
+        }
         default: {
             return state
         }

@@ -5,7 +5,8 @@ const actions = {
         dataFetchedError: "profileDataFetchedError",
         profileDataEdit: "profileDataEdit",
         profileImageUpload: "profileImageUpload",
-        deleteBlog: "deleteBlog"
+        deleteBlog: "deleteBlog",
+        logout: "logout"
     },
     blogs: {
         dataFetching: "blogDataFetching",
