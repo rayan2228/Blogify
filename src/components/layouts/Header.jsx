@@ -54,23 +54,23 @@ const Header = () => {
                       {state?.user?.avatar || auth?.user?.avatar ? (
                         <Img
                           src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
-                            state?.user?.avatar ?? auth?.user?.avatar
+                            state?.user?.id === auth?.user?.id
+                              ? state?.user?.avatar
+                              : auth?.user?.avatar
                           }`}
                           className={"rounded-full w-8 h-8 object-cover"}
                         />
                       ) : (
                         <div className="text-white bg-orange-600 avater-img">
                           <span className="">
-                            {auth?.user?.firstName?.charAt(0) ||
-                              state?.user?.firstName?.charAt(0)}
+                            {auth?.user?.firstName?.charAt(0)}
                           </span>
                           {/* User's first name initial */}
                         </div>
                       )}
                       {/* Logged-in user's name */}
                       <span className="ml-2 text-white">
-                        {auth?.user?.firstName || state?.user?.firstName}{" "}
-                        {auth?.user?.lastName || state?.user?.lastName}
+                        {auth?.user?.firstName} {auth?.user?.lastName}
                       </span>
                       {/* Profile Image */}
                     </div>
