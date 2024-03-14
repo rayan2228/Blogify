@@ -12,11 +12,13 @@ import SingleBlogActions from "../components/singleBlog/SingleBlogActions";
 import getDateFormat from "../utils/getDateFormat";
 import useBlogs from "../hooks/useBlogs";
 import useComment from "../hooks/useComment";
+import useAuth from "../hooks/useAuth";
 const SingleBlog = () => {
   const { blogId } = useParams();
   const { state, dispatch } = useBlogs();
   const { state: profile } = useProfile();
   const { setComments } = useComment();
+  const { auth } = useAuth();
   useEffect(() => {
     const fetchSingleBlog = async () => {
       dispatch({ type: actions.blogs.dataFetching });
@@ -40,11 +42,14 @@ const SingleBlog = () => {
         <div className="flex items-center justify-center gap-4 my-4">
           <div className="flex items-center space-x-2 capitalize">
             <Link to={`/profile/${state?.blog?.author?.id}`}>
-              {state?.blog.author?.avatar ? (
+              {state?.blog.author?.avatar ||
+              profile?.user?.avatar ||
+              auth?.user?.avatar ? (
                 <Img
                   src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
-                    profile?.user?.id === state?.blog.author?.id
-                      ? profile?.user?.avatar
+                    (profile?.user?.id || auth?.user?.id) ===
+                    state?.blog.author?.id
+                      ? profile?.user?.avatar || auth?.user?.avatar
                       : state?.blog.author?.avatar
                   }`}
                   className={"rounded-full w-8 h-8 object-cover"}

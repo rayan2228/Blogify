@@ -27,11 +27,13 @@ const BlogList = ({ blog }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 capitalize">
               <Link to={`/profile/${blog?.author?.id}`}>
-                {blog.author?.avatar ? (
+                {blog.author?.avatar ||
+                state?.user?.avatar ||
+                auth?.user?.avatar ? (
                   <Img
                     src={`${import.meta.env.VITE_IMAGE_BASEURL}/avatar/${
-                      state?.user?.id === blog.author?.id
-                        ? state?.user?.avatar
+                      (state?.user?.id || auth?.user?.id) === blog.author?.id
+                        ? state?.user?.avatar || auth?.user?.avatar
                         : blog.author?.avatar
                     }`}
                     className={"rounded-full w-8 h-8 object-cover"}
