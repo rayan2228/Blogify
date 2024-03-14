@@ -9,8 +9,13 @@ import useAxios from "../../hooks/useAxios";
 import LoginModal from "../../modal/LoginModal";
 import useLoginModal from "../../hooks/useLoginModal";
 import useComment from "../../hooks/useComment";
+import { useState } from "react";
+import { toast, Bounce } from "react-toastify";
+import Spinner from "../layouts/Spinner";
+import pageScroll from "../../utils/pageScroll";
 const CommentsContainer = () => {
   const { comments, setComments } = useComment();
+  const [spinner, setSpinner] = useState(false);
   const { setShowLoginModal, showLoginModal } = useLoginModal();
   const { blogId } = useParams();
   const { auth } = useAuth();
@@ -24,11 +29,24 @@ const CommentsContainer = () => {
   } = useForm();
   const { api } = useAxios();
   const formSubmit = async (formData) => {
+    setSpinner(true);
     try {
       const res = await api.post(`/blogs/${blogId}/comment`, {
         content: formData.comment,
       });
       if (res.status === 200) {
+        pageScroll(document.body.offsetHeight);
+        toast.success("comment successfully done", {
+          position: "bottom-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
         setComments(res?.data?.comments);
         reset();
       }
@@ -37,6 +55,8 @@ const CommentsContainer = () => {
         type: "random",
         message: error.response?.data?.error,
       });
+    } finally {
+      setSpinner(false);
     }
   };
   return (
@@ -106,9 +126,15 @@ const CommentsContainer = () => {
                   />
                 </InputField>
                 <div className="flex justify-end mt-4">
-                  <button className="px-6 py-2 text-white transition-all duration-200 bg-indigo-600 rounded-md md:py-3 hover:bg-indigo-700">
-                    Comment
-                  </button>
+                  {spinner ? (
+                    <span className="px-6 py-2 text-white transition-all duration-200 bg-indigo-600 rounded-md md:py-3 hover:bg-indigo-700">
+                      <Spinner />
+                    </span>
+                  ) : (
+                    <button className="px-6 py-2 text-white transition-all duration-200 bg-indigo-600 rounded-md md:py-3 hover:bg-indigo-700">
+                      Comment
+                    </button>
+                  )}
                 </div>
               </form>
             </div>

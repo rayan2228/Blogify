@@ -11,6 +11,7 @@ import useAxios from "../../hooks/useAxios";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useComment from "../../hooks/useComment";
+import pageScroll from "../../utils/pageScroll";
 
 const SingleBlogActions = ({ likes }) => {
   const { auth } = useAuth();
@@ -78,12 +79,16 @@ const SingleBlogActions = ({ likes }) => {
           <li onClick={handleFav}>
             <Img src={isFave ? heartFilledIcon : heartIcon} alt="Favourite" />
           </li>
-          <a href="#comments">
+          <div
+            onClick={() =>
+              pageScroll(document.querySelector("#comments").offsetHeight + 100)
+            }
+          >
             <li>
               <Img src={commentIcon} alt="Comments" />
               <span>{comments?.length}</span>
             </li>
-          </a>
+          </div>
         </ul>
       </div>
       {showLoginModal && (

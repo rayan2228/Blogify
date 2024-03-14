@@ -6,6 +6,7 @@ import DeleteConfirmationModal from "../../modal/DeleteConfirmationModal";
 import Img from "../layouts/Img";
 import { useState } from "react";
 import useComment from "../../hooks/useComment";
+import { toast, Bounce } from "react-toastify";
 const CommentActions = ({ commentId }) => {
   const { setComments } = useComment();
   const { blogId } = useParams();
@@ -16,6 +17,17 @@ const CommentActions = ({ commentId }) => {
     try {
       const res = await api.delete(`/blogs/${blogId}/comment/${Id}`);
       if (res.status === 200) {
+        toast.success("comment deleted successfully", {
+          position: "bottom-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
         setComments(res.data?.comments);
         setShowDeleteModal(false);
       }
