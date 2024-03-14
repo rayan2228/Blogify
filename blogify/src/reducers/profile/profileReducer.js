@@ -23,7 +23,11 @@ const profileReducer = (state, action) => {
                 loading: false,
                 error: null,
                 user: action.data,
-                blogs: action.data.blogs,
+                blogs: action.data.blogs?.sort((a, b) => {
+                    let dateA = new Date(a.createdAt);
+                    let dateB = new Date(b.createdAt);
+                    return dateB - dateA;
+                }),
                 favourites: action.data.favourites,
             }
         }

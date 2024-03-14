@@ -210,7 +210,7 @@
       "firstName": "Rayan",
       "lastName": "Hossain",
       "avatar": "avatar-1710177800388-407029334.png",
-      "bio": "",
+      "bio": "shoel",
       "password": "$2b$08$aWb/.rEuZ/OqZpXbNl7YX.1nU4F2BHfNKHTJNoi0IzKMTfWdthTze",
       "favourites": [
         {
@@ -537,6 +537,22 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-13T16:56:03.786Z"
+    },
+    {
+      "id": "cc5e9352f237d17c3ffe",
+      "title": "Dolor porro ray",
+      "content": "Nisi eu vero in labo",
+      "thumbnail": null,
+      "author": {
+        "id": "fc3fbb79e4698bd8015b",
+        "firstName": "Rayan",
+        "lastName": "Hossain",
+        "avatar": "avatar-1710177800388-407029334.png"
+      },
+      "tags": "Sapiente libero esse",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T03:25:46.210Z"
     }
   ]
 }
