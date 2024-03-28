@@ -1,7 +1,7 @@
 import useAuth from "../../hooks/useAuth";
 import useProfile from "../../hooks/useProfile";
 import actions from "../../reducers/actions";
-
+import { toast, Bounce } from "react-toastify";
 const Logout = () => {
   const { setAuth } = useAuth();
   const { dispatch: profileDispatch } = useProfile();
@@ -9,8 +9,29 @@ const Logout = () => {
     try {
       profileDispatch({ type: actions.profile.logout });
       setAuth({});
+      toast.success("logout successfully", {
+        position: "bottom-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
     } catch (error) {
-      console.log(error);
+      toast.error(error?.message, {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
     }
   };
   return (

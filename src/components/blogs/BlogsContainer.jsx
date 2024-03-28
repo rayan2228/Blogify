@@ -15,13 +15,13 @@ const BlogsContainer = () => {
       try {
         const res = await api.get(`/blogs?page=${page}&limit=10`);
         if (res.data?.blogs?.length === 0) {
+          dispatch({ type: actions.blogs.dataFetched, data: res.data?.blogs });
           setHasMore(false);
         } else {
           dispatch({ type: actions.blogs.dataFetched, data: res.data?.blogs });
           setPage((prevPage) => prevPage + 1);
         }
       } catch (error) {
-        console.log(error);
         dispatch({
           type: actions.blogs.dataFetchedError,
           error: error,

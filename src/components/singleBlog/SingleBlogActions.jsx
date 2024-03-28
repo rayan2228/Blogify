@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useComment from "../../hooks/useComment";
 import pageScroll from "../../utils/pageScroll";
-
+import { toast, Bounce } from "react-toastify";
 const SingleBlogActions = ({ likes }) => {
   const { auth } = useAuth();
   const { api } = useAxios();
@@ -37,7 +37,17 @@ const SingleBlogActions = ({ likes }) => {
           setIsLiked(res?.data?.isLiked);
         }
       } catch (error) {
-        console.log(error);
+        toast.error(error?.message, {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     }
   };
@@ -50,7 +60,17 @@ const SingleBlogActions = ({ likes }) => {
           setIsFav(res?.data?.isFavourite);
         }
       } catch (error) {
-        console.log(error);
+        toast.error(error?.message, {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     }
   };
@@ -62,7 +82,17 @@ const SingleBlogActions = ({ likes }) => {
           setIsFav(res?.data?.blogs?.some((blog) => blog.id === blogId));
         }
       } catch (error) {
-        console.log(error);
+        toast.error(error?.message, {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     };
     setIsLiked(lengths.likes?.some((userID) => userID.id === auth?.user?.id));
