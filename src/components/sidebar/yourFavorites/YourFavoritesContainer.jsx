@@ -16,12 +16,14 @@ const YourFavoritesContainer = () => {
     dispatch({ type: actions.blogs.dataFetching });
     const fetchFavouritesBlogs = async () => {
       try {
-        const res = await api.get(`/blogs/favourites`);
-        if (res.status === 200) {
-          dispatch({
-            type: actions.blogs.favouriteDataFetched,
-            data: res.data?.blogs,
-          });
+        if (auth) {
+          const res = await api.get(`/blogs/favourites`);
+          if (res?.status === 200) {
+            dispatch({
+              type: actions.blogs.favouriteDataFetched,
+              data: res.data?.blogs,
+            });
+          }
         }
       } catch (error) {
         dispatch({ type: actions.blogs.dataFetchedError, error: error });
@@ -37,7 +39,8 @@ const YourFavoritesContainer = () => {
     content = <NotFound message={"not added yet"} />;
   }
   if (state?.favouriteBlogs?.length > 0) {
-    content = state?.favouriteBlogs?.map((favouriteBlog) => (
+    console.log("yee");
+    content = state?.favouriteBlogs?.map(() => (
       <YourFavouriteBlogList
         key={favouriteBlog.id}
         favouriteBlog={favouriteBlog}

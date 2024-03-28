@@ -24,7 +24,7 @@ const MostPopularContainer = () => {
       }
     };
     fetchPopularBlogs();
-  }, [dispatch]);
+  }, []);
   let content;
   if (state?.loading) {
     content = <Loading />;

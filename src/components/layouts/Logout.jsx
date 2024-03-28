@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useProfile from "../../hooks/useProfile";
 import actions from "../../reducers/actions";
@@ -5,6 +6,7 @@ import { toast, Bounce } from "react-toastify";
 const Logout = () => {
   const { setAuth } = useAuth();
   const { dispatch: profileDispatch } = useProfile();
+  const navigate = useNavigate();
   const handleLogout = () => {
     try {
       profileDispatch({ type: actions.profile.logout });
@@ -20,6 +22,7 @@ const Logout = () => {
         theme: "dark",
         transition: Bounce,
       });
+      navigate("/");
     } catch (error) {
       toast.error(error?.message, {
         position: "bottom-center",

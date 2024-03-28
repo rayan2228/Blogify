@@ -2,9 +2,14 @@ import { useEffect } from "react";
 import api from "../api";
 import useAuth from "./useAuth";
 import axios from "axios";
-
+import useProfile from "./useProfile";
+import actions from "../reducers/actions";
+import { useNavigate } from "react-router-dom";
+import { toast, Bounce } from "react-toastify";
 const useAxios = () => {
+    const { dispatch: profileDispatch } = useProfile();
     const { auth, setAuth } = useAuth()
+    const navigate = useNavigate()
     useEffect(() => {
         // add a request interceptor
         const requestInterceptor = api.interceptors.request.use(
@@ -35,7 +40,20 @@ const useAxios = () => {
                         originalRequest.headers.Authorization = `Bearer ${accessToken}`
                         return axios(originalRequest)
                     } catch (error) {
-                        console.log(error);
+                        profileDispatch({ type: actions.profile.logout });
+                        setAuth({});
+                        navigate("/")
+                        toast.error(error?.message, {
+                            position: "bottom-center",
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "dark",
+                            transition: Bounce,
+                        });
                     }
 
                 }
@@ -46,7 +64,7 @@ const useAxios = () => {
             api.interceptors.request.eject(requestInterceptor)
             api.interceptors.response.eject(responseInterceptor)
         }
-    }, [auth, setAuth])
+    }, [auth, setAuth, profileDispatch])
     return { api }
 }
 export default useAxios
