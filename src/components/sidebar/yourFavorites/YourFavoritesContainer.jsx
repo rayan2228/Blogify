@@ -15,8 +15,8 @@ const YourFavoritesContainer = () => {
   useEffect(() => {
     dispatch({ type: actions.blogs.dataFetching });
     const fetchFavouritesBlogs = async () => {
-      try {
-        if (auth) {
+      if (auth) {
+        try {
           const res = await api.get(`/blogs/favourites`);
           if (res?.status === 200) {
             dispatch({
@@ -24,9 +24,9 @@ const YourFavoritesContainer = () => {
               data: res.data?.blogs,
             });
           }
+        } catch (error) {
+          dispatch({ type: actions.blogs.dataFetchedError, error: error });
         }
-      } catch (error) {
-        dispatch({ type: actions.blogs.dataFetchedError, error: error });
       }
     };
     auth?.user && fetchFavouritesBlogs();

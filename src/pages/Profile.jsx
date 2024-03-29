@@ -5,13 +5,12 @@ import useProfile from "../hooks/useProfile";
 import actions from "../reducers/actions";
 import ProfileBlogs from "../components/profile/ProfileBlogs";
 import Loading from "../components/layouts/Loading";
-import useAxios from "../hooks/useAxios";
 import { useParams } from "react-router-dom";
 import NotFound from "../components/layouts/NotFound";
+import api from "../api";
 const Profile = () => {
   const { userId } = useParams();
   const { state, dispatch } = useProfile();
-  const { api } = useAxios();
   useEffect(() => {
     dispatch({ type: actions.profile.dataFetching });
     const fetchProfileData = async () => {
@@ -19,10 +18,6 @@ const Profile = () => {
         const res = await api.get(`/profile/${userId}`);
         if (res?.status === 200) {
           dispatch({ type: actions.profile.dataFetched, data: res.data });
-        } else {
-          dispatch({
-            type: actions.profile.dataFetchedError,
-          });
         }
       } catch (error) {
         dispatch({

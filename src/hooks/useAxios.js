@@ -40,6 +40,7 @@ const useAxios = () => {
                         originalRequest.headers.Authorization = `Bearer ${accessToken}`
                         return axios(originalRequest)
                     } catch (error) {
+                        console.log(error);
                         profileDispatch({ type: actions.profile.logout });
                         setAuth({});
                         navigate("/")
@@ -54,6 +55,7 @@ const useAxios = () => {
                             theme: "dark",
                             transition: Bounce,
                         });
+
                     }
 
                 }
