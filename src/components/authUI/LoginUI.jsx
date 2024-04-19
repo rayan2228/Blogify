@@ -5,6 +5,7 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import Spinner from "../layouts/Spinner";
+import Cookies from "js-cookie";
 const LoginUI = ({ onSwap }) => {
   const [spinner, seSpinner] = useState(false);
   const { pathname } = useLocation();
@@ -28,6 +29,9 @@ const LoginUI = ({ onSwap }) => {
         if (token) {
           const { accessToken, refreshToken } = token;
           setAuth({ user, accessToken, refreshToken });
+          Cookies.set("_blogify", accessToken, { expires: 1, secure: true });
+          Cookies.set("_blogify", refreshToken, { expires: 30, secure: true });
+          localStorage.setItem("_blogify", JSON.stringify({ user }));
           if (pathname === "/login") {
             navigate("/");
           } else {
