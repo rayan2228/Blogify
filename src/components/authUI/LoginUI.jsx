@@ -28,7 +28,7 @@ const LoginUI = ({ onSwap }) => {
         const { token, user } = res.data;
         if (token) {
           const { accessToken, refreshToken } = token;
-          setAuth({ user, accessToken, refreshToken });
+          setAuth({ user });
           Cookies.set("_blogifyAccessToken", accessToken, {
             expires: import.meta.env.VITE_ACCESSTOKEN_EXPIRE,
             secure: true,
