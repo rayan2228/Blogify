@@ -20,7 +20,7 @@ const BlogActions = ({ blogDetails }) => {
   const handleDeleteBlog = async (Id) => {
     try {
       const res = await api.delete(`/blogs/${Id}`);
-      if (res.status === 200) {
+      if (res?.status === 200) {
         dispatch({ type: actions.blogs.deleteBlog, data: Id });
         dispatchProfile({ type: actions.profile.deleteBlog, data: Id });
         setShowDeleteModal(false);

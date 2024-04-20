@@ -13,7 +13,7 @@ const MostPopularContainer = () => {
     const fetchPopularBlogs = async () => {
       try {
         const res = await api.get(`/blogs/popular`);
-        if (res.status === 200) {
+        if (res?.status === 200) {
           dispatch({
             type: actions.blogs.popularDataFetched,
             data: res.data?.blogs,

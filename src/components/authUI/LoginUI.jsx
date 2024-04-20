@@ -24,7 +24,7 @@ const LoginUI = ({ onSwap }) => {
         `${import.meta.env.VITE_API_BASEURL}auth/login`,
         formData
       );
-      if (res.status === 200) {
+      if (res?.status === 200) {
         const { token, user } = res.data;
         if (token) {
           const { accessToken, refreshToken } = token;

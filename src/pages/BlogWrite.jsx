@@ -34,7 +34,7 @@ const BlogWrite = () => {
       } else {
         res = await api.post("/blogs", createFormData);
       }
-      if (res.status === 201) {
+      if (res?.status === 201) {
         setPreview(null);
         reset();
         toast.success(res?.data?.message, {
@@ -48,7 +48,7 @@ const BlogWrite = () => {
           theme: "dark",
           transition: Bounce,
         });
-      } else if (res.status === 200) {
+      } else if (res?.status === 200) {
         setBlog(res?.data);
         toast.success("blog updated successfully", {
           position: "bottom-center",

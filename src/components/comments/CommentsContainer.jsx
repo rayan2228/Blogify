@@ -34,7 +34,7 @@ const CommentsContainer = () => {
       const res = await api.post(`/blogs/${blogId}/comment`, {
         content: formData.comment,
       });
-      if (res.status === 200) {
+      if (res?.status === 200) {
         pageScroll(document.body.offsetHeight);
         toast.success("comment successfully done", {
           position: "bottom-center",

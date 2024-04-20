@@ -16,7 +16,7 @@ const CommentActions = ({ commentId }) => {
   const handleDeleteComment = async (Id) => {
     try {
       const res = await api.delete(`/blogs/${blogId}/comment/${Id}`);
-      if (res.status === 200) {
+      if (res?.status === 200) {
         toast.success("comment deleted successfully", {
           position: "bottom-center",
           autoClose: 1000,

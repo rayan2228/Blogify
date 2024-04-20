@@ -17,7 +17,7 @@ const RegisterUI = ({ onSwap }) => {
         `${import.meta.env.VITE_API_BASEURL}auth/register`,
         formData
       );
-      if (res.status === 201) {
+      if (res?.status === 201) {
         if (pathname === "/register") {
           navigate("/login");
         } else {

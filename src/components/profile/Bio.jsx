@@ -19,7 +19,7 @@ const Bio = () => {
     dispatch({ type: actions.profile.dataFetching });
     try {
       const res = await api.patch(`/profile/`, { bio });
-      if (res.status === 200) {
+      if (res?.status === 200) {
         dispatch({
           type: actions.profile.profileDataEdit,
           data: res.data.user,

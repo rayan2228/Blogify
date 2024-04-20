@@ -13,7 +13,7 @@ const Avatar = () => {
       const formData = new FormData();
       formData.append("avatar", e.target.files[0]);
       const res = await api.post("/profile/avatar", formData);
-      if (res.status === 200) {
+      if (res?.status === 200) {
         dispatch({
           type: actions.profile.profileImageUpload,
           data: res.data.user,

@@ -32,7 +32,7 @@ const SingleBlogActions = ({ likes }) => {
     if (isAuth) {
       try {
         let res = await api.post(`blogs/${blogId}/like`);
-        if (res.status === 200) {
+        if (res?.status === 200) {
           setLengths({ ...lengths, likes: res?.data?.likes });
           setIsLiked(res?.data?.isLiked);
         }
@@ -56,7 +56,7 @@ const SingleBlogActions = ({ likes }) => {
     if (isAuth) {
       try {
         let res = await api.patch(`blogs/${blogId}/favourite`);
-        if (res.status === 200) {
+        if (res?.status === 200) {
           setIsFav(res?.data?.isFavourite);
         }
       } catch (error) {
@@ -78,7 +78,7 @@ const SingleBlogActions = ({ likes }) => {
     const fetchFavBlogs = async () => {
       const res = await api.get(`/blogs/favourites`);
       try {
-        if (res.status === 200) {
+        if (res?.status === 200) {
           setIsFav(res?.data?.blogs?.some((blog) => blog.id === blogId));
         }
       } catch (error) {

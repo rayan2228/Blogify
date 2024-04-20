@@ -54,7 +54,6 @@ const BlogsContainer = () => {
     content = <NotFound message={"no blog found"} />;
   }
   if (state?.error) {
-    console.log(state.error);
     content = (
       <NotFound message={`an error occurred ${state?.error.message}`} />
     );

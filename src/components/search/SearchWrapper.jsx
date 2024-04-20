@@ -14,7 +14,7 @@ const SearchWrapper = ({ onClose }) => {
     let lowerCaseSearchTerms = searchTerms.toLowerCase();
     try {
       let res = await api.get(`search?q=${lowerCaseSearchTerms}`);
-      if (res.status === 200) {
+      if (res?.status === 200) {
         dispatch({
           type: actions.blogs.searchedBlogsDataFetched,
           data: res?.data?.data,
