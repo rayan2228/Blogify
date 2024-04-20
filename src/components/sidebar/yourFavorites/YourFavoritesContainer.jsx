@@ -40,7 +40,7 @@ const YourFavoritesContainer = () => {
   }
   if (state?.favouriteBlogs?.length > 0) {
     console.log("yee");
-    content = state?.favouriteBlogs?.map(() => (
+    content = state?.favouriteBlogs?.map((favouriteBlog) => (
       <YourFavouriteBlogList
         key={favouriteBlog.id}
         favouriteBlog={favouriteBlog}

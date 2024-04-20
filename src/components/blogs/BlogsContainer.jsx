@@ -58,6 +58,7 @@ const BlogsContainer = () => {
       <NotFound message={`an error occurred ${state?.error.message}`} />
     );
   }
+  console.log(state?.blogs);
   return (
     <div className="space-y-3 md:col-span-5">
       {content}

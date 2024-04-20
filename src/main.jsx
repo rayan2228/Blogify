@@ -8,15 +8,15 @@ import BlogsProvider from "./providers/BlogsProvider.jsx";
 import "react-toastify/dist/ReactToastify.css";
 import CommentProvider from "./providers/CommentProvider.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BlogsProvider>
-      <CommentProvider>
-        <AuthProvider>
-          <Router>
-            <App />
-          </Router>
-        </AuthProvider>
-      </CommentProvider>
-    </BlogsProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BlogsProvider>
+    <CommentProvider>
+      <AuthProvider>
+        <Router>
+          <App />
+        </Router>
+      </AuthProvider>
+    </CommentProvider>
+  </BlogsProvider>
+  // </React.StrictMode>
 );

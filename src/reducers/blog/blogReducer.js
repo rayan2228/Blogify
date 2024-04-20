@@ -21,6 +21,18 @@ const blogReducer = (state, action) => {
             }
         }
         case actions.blogs.dataFetched: {
+            // let result
+            // if (state?.blogs) {
+            //     result = state.blogs.map((value, index) => {
+            //         if (action.data.indexOf(value) !== index) {
+            //             [...state.blogs, ...action.data]
+            //         }
+            //     })
+            //     // result = [...state.blogs, ...action.data]
+            // } else {
+            //     result = action.data
+            // }
+            // state?.blogs.filter((data, index) => action.data.indexOf(data) !== index)
             return {
                 ...state,
                 loading: false,
