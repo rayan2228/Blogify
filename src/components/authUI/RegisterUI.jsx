@@ -15,6 +15,7 @@ const RegisterUI = ({ onSwap }) => {
     setError,
   } = useForm();
   const formSubmit = async (formData) => {
+    seSpinner(true);
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_API_BASEURL}auth/register`,
