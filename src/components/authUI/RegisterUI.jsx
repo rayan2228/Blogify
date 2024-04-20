@@ -2,7 +2,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import InputField from "../../components/layouts/InputField";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import Spinner from "../layouts/Spinner";
 const RegisterUI = ({ onSwap }) => {
+  const [spinner, seSpinner] = useState(false);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const {
@@ -29,6 +31,8 @@ const RegisterUI = ({ onSwap }) => {
         type: "random",
         message: error.response?.data?.error,
       });
+    } finally {
+      seSpinner(false);
     }
   };
   return (
@@ -140,12 +144,18 @@ const RegisterUI = ({ onSwap }) => {
           />
         </InputField>
         <div className="mb-6">
-          <button
-            type="submit"
-            className="w-full p-3 text-white transition-all duration-200 bg-indigo-600 rounded-md hover:bg-indigo-700"
-          >
-            Create Account
-          </button>
+          {spinner ? (
+            <span className="block w-full p-3 text-center text-white transition-all duration-200 bg-indigo-600 rounded-md hover:bg-indigo-700">
+              <Spinner />
+            </span>
+          ) : (
+            <button
+              type="submit"
+              className="w-full p-3 text-white transition-all duration-200 bg-indigo-600 rounded-md hover:bg-indigo-700"
+            >
+              Create Account
+            </button>
+          )}
         </div>
         <p className="text-center">
           Already have account?

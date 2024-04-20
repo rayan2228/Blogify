@@ -30,11 +30,11 @@ const LoginUI = ({ onSwap }) => {
           const { accessToken, refreshToken } = token;
           setAuth({ user, accessToken, refreshToken });
           Cookies.set("_blogifyAccessToken", accessToken, {
-            expires: 1,
+            expires: import.meta.env.VITE_ACCESSTOKEN_EXPIRE,
             secure: true,
           });
           Cookies.set("_blogifyRefreshToken", refreshToken, {
-            expires: 30,
+            expires: import.meta.env.VITE_REFRESHTOKEN_EXPIRE,
             secure: true,
           });
           localStorage.setItem("_blogify", JSON.stringify({ user }));
