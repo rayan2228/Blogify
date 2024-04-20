@@ -1,8 +1,9 @@
-import { Link, useLocation, useNavigate, useState } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import InputField from "../../components/layouts/InputField";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Spinner from "../layouts/Spinner";
+import { useState } from "react";
 const RegisterUI = ({ onSwap }) => {
   const [spinner, seSpinner] = useState(false);
   const { pathname } = useLocation();
