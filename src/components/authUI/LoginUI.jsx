@@ -29,8 +29,14 @@ const LoginUI = ({ onSwap }) => {
         if (token) {
           const { accessToken, refreshToken } = token;
           setAuth({ user, accessToken, refreshToken });
-          Cookies.set("_blogify", accessToken, { expires: 1, secure: true });
-          Cookies.set("_blogify", refreshToken, { expires: 30, secure: true });
+          Cookies.set("_blogifyAccessToken", accessToken, {
+            expires: 1,
+            secure: true,
+          });
+          Cookies.set("_blogifyRefreshToken", refreshToken, {
+            expires: 30,
+            secure: true,
+          });
           localStorage.setItem("_blogify", JSON.stringify({ user }));
           if (pathname === "/login") {
             navigate("/");

@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
 import useProfile from "../../hooks/useProfile";
 import actions from "../../reducers/actions";
 import { toast, Bounce } from "react-toastify";
+import Cookies from "js-cookie";
+import useAuth from "../../hooks/useAuth";
 const Logout = () => {
   const { setAuth } = useAuth();
   const { dispatch: profileDispatch } = useProfile();
@@ -11,6 +12,9 @@ const Logout = () => {
     try {
       profileDispatch({ type: actions.profile.logout });
       setAuth({});
+      localStorage.removeItem("_blogify");
+      Cookies.remove("_blogifyAccessToken");
+      Cookies.remove("_blogifyRefreshToken");
       toast.success("logout successfully", {
         position: "bottom-center",
         autoClose: 1000,

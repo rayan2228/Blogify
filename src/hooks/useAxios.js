@@ -1,20 +1,21 @@
 import { useEffect } from "react";
 import api from "../api";
-import useAuth from "./useAuth";
 import axios from "axios";
 import useProfile from "./useProfile";
 import actions from "../reducers/actions";
 import { useNavigate } from "react-router-dom";
 import { toast, Bounce } from "react-toastify";
+import Cookies from "js-cookie";
+import useAuth from "./useAuth";
 const useAxios = () => {
+    const { setAuth } = useAuth();
     const { dispatch: profileDispatch } = useProfile();
-    const { auth, setAuth } = useAuth()
     const navigate = useNavigate()
     useEffect(() => {
         // add a request interceptor
         const requestInterceptor = api.interceptors.request.use(
             (config) => {
-                const accessToken = auth?.accessToken
+                const accessToken = Cookies.get("_blogifyAccessToken")
                 if (accessToken) {
                     config.headers.Authorization = `Bearer ${accessToken}`
                 }
@@ -29,20 +30,20 @@ const useAxios = () => {
                 const originalRequest = error.config
                 if (error.response.status === 403 && !originalRequest._retry) {
                     originalRequest._retry = true;
-                    const refreshToken = auth?.refreshToken
+                    const refreshToken = Cookies.get("_blogifyRefreshToken")
                     try {
                         const res = await axios.post(
                             `${import.meta.env.VITE_API_BASEURL}auth/refresh-token`,
                             { refreshToken }
                         );
                         const { accessToken } = res.data
-                        setAuth({ ...auth, accessToken: accessToken })
+                        Cookies.set("_blogifyAccessToken", accessToken, { expires: 1, secure: true });
                         originalRequest.headers.Authorization = `Bearer ${accessToken}`
                         return axios(originalRequest)
                     } catch (error) {
-                        console.log(error);
                         profileDispatch({ type: actions.profile.logout });
-                        setAuth({});
+                        localStorage.removeItem("_blogify")
+                        setAuth({})
                         navigate("/")
                         toast.error(error?.message, {
                             position: "bottom-center",
@@ -55,7 +56,6 @@ const useAxios = () => {
                             theme: "dark",
                             transition: Bounce,
                         });
-
                     }
 
                 }
@@ -66,7 +66,7 @@ const useAxios = () => {
             api.interceptors.request.eject(requestInterceptor)
             api.interceptors.response.eject(responseInterceptor)
         }
-    }, [auth, setAuth, profileDispatch])
+    }, [profileDispatch])
     return { api }
 }
 export default useAxios
