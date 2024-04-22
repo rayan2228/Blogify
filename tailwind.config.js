@@ -13,6 +13,9 @@ export default {
       colors: {
         dark: "#121416",
       },
+      fontFamily: {
+        workbanch: ["Workbench"]
+      }
     },
   },
   plugins: [],

@@ -1,5 +1,4 @@
 import Img from "./Img";
-import logo from "../../assets/logo.svg";
 import search from "../../assets/icons/search.svg";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -18,7 +17,9 @@ const Header = () => {
           {/* Logo */}
           <div>
             <Link to="/">
-              <Img className="w-32" src={logo} alt="lws" />
+              <h1 className="tracking-[10px] capitalize text-4xl font-workbanch">
+                rayan
+              </h1>
             </Link>
           </div>
           {/* Actions - Login, Write, Home, Search */}

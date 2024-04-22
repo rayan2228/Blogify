@@ -1,12 +1,13 @@
 import Img from "./Img";
-import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="my-6 md:my-8 bg-[#030317]">
       <div className="container flex items-center justify-between mx-auto">
         <Link to="/">
-          <Img className="w-28" src={logo} alt="lws" />
+          <h1 className="tracking-[10px] capitalize text-4xl font-workbanch">
+            rayan
+          </h1>
         </Link>
         <ul className="flex items-center space-x-5">
           <li className="text-center">
