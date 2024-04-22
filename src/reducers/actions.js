@@ -11,12 +11,13 @@ const actions = {
     blogs: {
         dataFetching: "blogDataFetching",
         dataFetched: "blogDataFetched",
+        stopDataFetched: "stopDataFetched",
         dataFetchedError: "blogDataFetchedError",
         singleDataFetched: "singleDataFetched",
         popularDataFetched: "popularDataFetched",
         favouriteDataFetched: "favouriteDataFetched",
         searchedBlogsDataFetched: "searchedBlogsDataFetched",
-        deleteBlog: "deleteBlog"
+        deleteBlog: "deleteBlog",
     }
 }
 

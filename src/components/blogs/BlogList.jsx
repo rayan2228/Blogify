@@ -1,5 +1,5 @@
 import Img from "../layouts/Img";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useProfile from "../../hooks/useProfile";
 import BlogActions from "./BlogActions";
 import useAuth from "../../hooks/useAuth";

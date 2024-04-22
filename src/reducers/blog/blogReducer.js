@@ -2,6 +2,7 @@ import actions from "../actions"
 
 const initialState = {
     blogs: null,
+    hasMore: true,
     blog: null,
     popularBlogs: null,
     favouriteBlogs: null,
@@ -21,23 +22,20 @@ const blogReducer = (state, action) => {
             }
         }
         case actions.blogs.dataFetched: {
-            // let result
-            // if (state?.blogs) {
-            //     result = state.blogs.map((value, index) => {
-            //         if (action.data.indexOf(value) !== index) {
-            //             [...state.blogs, ...action.data]
-            //         }
-            //     })
-            //     // result = [...state.blogs, ...action.data]
-            // } else {
-            //     result = action.data
-            // }
-            // state?.blogs.filter((data, index) => action.data.indexOf(data) !== index)
+            let result = state.blogs ? new Set([...state.blogs, ...action.data]) : action.data
             return {
                 ...state,
                 loading: false,
                 error: null,
-                blogs: state?.blogs ? [...state.blogs, ...action.data] : action.data,
+                blogs: [...result],
+            }
+        }
+        case actions.blogs.stopDataFetched: {
+            return {
+                ...state,
+                loading: false,
+                error: null,
+                hasMore: action.data,
             }
         }
         case actions.blogs.dataFetchedError: {

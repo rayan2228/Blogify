@@ -8,29 +8,32 @@ import useBlogs from "../../hooks/useBlogs";
 const BlogsContainer = () => {
   const { state, dispatch } = useBlogs();
   const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
   const loadingRef = useRef(null);
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const res = await api.get(`/blogs?page=${page}&limit=10`);
-        if (res.data?.blogs?.length === 0) {
-          dispatch({ type: actions.blogs.dataFetched, data: res.data?.blogs });
-          setHasMore(false);
-        } else {
-          dispatch({ type: actions.blogs.dataFetched, data: res.data?.blogs });
-          setPage((prevPage) => prevPage + 1);
-        }
-      } catch (error) {
+  const fetchBlogs = async () => {
+    try {
+      const res = await api.get(`/blogs?page=${page}&limit=5`);
+      if (res.data?.blogs?.length === 0) {
+        dispatch({ type: actions.blogs.dataFetched, data: res.data?.blogs });
         dispatch({
-          type: actions.blogs.dataFetchedError,
-          error: error,
+          type: actions.blogs.stopDataFetched,
+          data: false,
         });
+      } else {
+        console.log(res.data?.blogs);
+        dispatch({ type: actions.blogs.dataFetched, data: res.data?.blogs });
+        setPage((prevPage) => prevPage + 1);
       }
-    };
+    } catch (error) {
+      dispatch({
+        type: actions.blogs.dataFetchedError,
+        error: error,
+      });
+    }
+  };
+  useEffect(() => {
     const onIntersection = (items) => {
       const loadItem = items[0];
-      if (loadItem.isIntersecting && hasMore) {
+      if (loadItem.isIntersecting && state.hasMore) {
         fetchBlogs();
       }
     };
@@ -43,14 +46,14 @@ const BlogsContainer = () => {
         observer.disconnect();
       }
     };
-  }, [hasMore, page]);
+  }, [state.hasMore, page]);
   let content;
   if (state?.blogs?.length > 0) {
     content = state?.blogs?.map((blog) => (
       <BlogList key={blog.id} blog={blog} />
     ));
   }
-  if (state?.blogs?.length < 1) {
+  if (state?.blogs?.length === 0) {
     content = <NotFound message={"no blog found"} />;
   }
   if (state?.error) {
@@ -58,11 +61,10 @@ const BlogsContainer = () => {
       <NotFound message={`an error occurred ${state?.error.message}`} />
     );
   }
-  console.log(state?.blogs);
   return (
     <div className="space-y-3 md:col-span-5">
       {content}
-      {hasMore && !state?.error ? (
+      {state.hasMore && !state?.error ? (
         <Loading ref={loadingRef} />
       ) : (
         !state?.error &&
