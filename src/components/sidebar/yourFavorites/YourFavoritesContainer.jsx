@@ -39,7 +39,6 @@ const YourFavoritesContainer = () => {
     content = <NotFound message={"not added yet"} />;
   }
   if (state?.favouriteBlogs?.length > 0) {
-    console.log("yee");
     content = state?.favouriteBlogs?.map((favouriteBlog) => (
       <YourFavouriteBlogList
         key={favouriteBlog.id}

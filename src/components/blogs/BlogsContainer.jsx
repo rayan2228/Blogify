@@ -19,7 +19,6 @@ const BlogsContainer = () => {
           data: false,
         });
       } else {
-        console.log(res.data?.blogs);
         dispatch({ type: actions.blogs.dataFetched, data: res.data?.blogs });
         setPage((prevPage) => prevPage + 1);
       }
